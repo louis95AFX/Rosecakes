@@ -3,38 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rose Cakes | Magical Premium Bakery & Custom Kids Cakes</title>
+    <title>Rose Cakes | Luxury Premium Bakery & Custom Cakes</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            /* Sophisticated premium pastel color palette */
-            --blush: #F8D7E8;
-            --blush-deep: #E08DAD;
-            --ivory: #FFF9F5;
-            --gold: #D4A373;
-            --gold-light: #FAEDCD;
-            --beige: #D8F1FF; /* Soft Sky Blue */
-            --lavender: #E7D9FF;
-            --mint: #E8F5E9;
-            --peach: #FFD6B0;
-            --charcoal: #4A3E3D; /* Soft warm dark text */
-            --text-gray: #716160;
-            --glass: rgba(255, 249, 245, 0.85);
-            --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); /* Elegant hardware-accelerated curves */
-            --card-shadow: 0 10px 30px rgba(113, 97, 96, 0.05);
-            --bubble-shadow: 0 8px 20px rgba(224, 141, 173, 0.1);
+            --blush: #F7E7E5;
+            --blush-deep: #E8C5C1;
+            --ivory: #FFFDFB;
+            --gold: #D4AF37;
+            --gold-light: #F3E5AB;
+            --beige: #F5EFE6;
+            --charcoal: #2C2625;
+            --text-gray: #6B5E5C;
+            --glass: rgba(255, 253, 251, 0.75);
+            --transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Quicksand', sans-serif;
-            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
         }
 
         html {
@@ -45,42 +38,32 @@
             background-color: var(--ivory);
             color: var(--charcoal);
             overflow-x: hidden;
-            line-height: 1.7;
-            /* Ultra-subtle, elegant bakery sprinkles overlay pattern */
-            background-image: radial-gradient(var(--blush) 8%, transparent 9%), radial-gradient(var(--gold-light) 8%, transparent 9%);
-            background-size: 50px 50px;
-            background-position: 0 0, 25px 25px;
+            line-height: 1.6;
         }
 
         h1, h2, h3, h4, .brand-logo {
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 700;
-            letter-spacing: -0.02em;
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            letter-spacing: 1px;
         }
 
-        /* --- REUSABLE COMPONENTS & MODERN INTERACTIVE BUTTONS --- */
+        /* --- REUSABLE COMPONENTS --- */
         .btn-luxury {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px 34px;
-            border: 2px solid var(--charcoal);
-            background: var(--ivory);
+            display: inline-block;
+            padding: 14px 32px;
+            border: 1px solid var(--charcoal);
+            background: transparent;
             color: var(--charcoal);
-            text-transform: none;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1rem;
-            letter-spacing: 0.2px;
-            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            font-weight: 500;
             cursor: pointer;
             transition: var(--transition);
             text-decoration: none;
             position: relative;
             overflow: hidden;
             z-index: 1;
-            border-radius: 30px; 
-            box-shadow: 0 4px 0 var(--charcoal);
-            transform: translateY(-2px);
         }
 
         .btn-luxury::before {
@@ -90,20 +73,13 @@
             left: 0;
             width: 0;
             height: 100%;
-            background-color: var(--blush);
+            background-color: var(--charcoal);
             transition: var(--transition);
             z-index: -1;
         }
 
         .btn-luxury:hover {
-            color: var(--charcoal);
-            transform: translateY(-4px);
-            box-shadow: 0 6px 0 var(--charcoal);
-        }
-
-        .btn-luxury:active {
-            transform: translateY(0px);
-            box-shadow: 0 0px 0 var(--charcoal);
+            color: var(--ivory);
         }
 
         .btn-luxury:hover::before {
@@ -111,64 +87,53 @@
         }
 
         .btn-gold {
-            border-color: var(--charcoal);
+            border-color: var(--gold);
             color: var(--charcoal);
-            background: linear-gradient(135deg, var(--gold-light), var(--peach));
-            box-shadow: 0 4px 0 var(--charcoal);
+            background: linear-gradient(135deg, var(--ivory), var(--beige));
         }
         .btn-gold::before {
-            background-color: var(--lavender);
+            background-color: var(--gold);
         }
         .btn-gold:hover {
-            color: var(--charcoal);
+            color: var(--ivory);
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 70px;
-            position: relative;
+            margin-bottom: 60px;
         }
 
         .section-title span {
-            font-family: 'DM Sans', sans-serif;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
             color: var(--gold);
-            display: inline-block;
-            background: #FFF;
-            padding: 6px 22px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            margin-bottom: 16px;
-            font-weight: 700;
-            box-shadow: var(--card-shadow);
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
         }
 
         .section-title h2 {
             font-size: 2.8rem;
             position: relative;
             display: inline-block;
-            color: var(--charcoal);
-            padding-bottom: 20px;
+            padding-bottom: 15px;
         }
 
         .section-title h2::after {
-            content: '';
+            content: '♦';
             position: absolute;
-            bottom: 0;
+            bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 50px;
-            height: 3px;
-            background: var(--blush-deep);
-            border-radius: 2px;
+            color: var(--gold);
+            font-size: 0.8rem;
         }
 
-        /* Fluid Reveal on Scroll Framework */
+        /* Reveal on Scroll class */
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(40px);
+            transition: all 1s ease;
         }
 
         .reveal.active {
@@ -176,29 +141,21 @@
             transform: translateY(0);
         }
 
-        /* --- SOPHISTICATED FLOATING DECORATIONS --- */
+        /* --- FLOATING DECORATIONS --- */
         .petal-bg {
             position: absolute;
             pointer-events: none;
-            opacity: 0.4;
-            animation: elegantFloat 8s ease-in-out infinite;
-            z-index: 1;
-            font-size: 1.8rem;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.03));
+            opacity: 0.15;
+            animation: float 8s ease-in-out infinite;
+            z-index: 0;
         }
 
-        @keyframes elegantFloat {
-            0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
-            50% { transform: translateY(-20px) rotate(10deg) scale(1.08); }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
         }
 
-        /* Geometric Candy Anchor Arrays */
-        .bg-candy-1 { top: 12%; left: 6%; animation-delay: 0s; }
-        .bg-candy-2 { top: 38%; right: 5%; animation-delay: 2s; }
-        .bg-candy-3 { top: 70%; left: 4%; animation-delay: 4s; }
-        .bg-candy-4 { top: 88%; right: 7%; animation-delay: 1s; }
-
-        /* --- PREMIUM NAVIGATION GLASSBAR --- */
+        /* --- NAVIGATION BAR --- */
         header {
             position: fixed;
             top: 0;
@@ -206,78 +163,79 @@
             width: 100%;
             z-index: 1000;
             transition: var(--transition);
-            border-bottom: 1px solid transparent;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         header.scrolled {
             background: var(--glass);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            box-shadow: 0 4px 30px rgba(113, 97, 96, 0.04);
-            border-bottom: 1px solid rgba(248, 215, 232, 0.4);
-            padding: 5px 0;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 10px 0;
         }
 
         .nav-container {
-            max-width: 1300px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 22px 30px;
+            padding: 20px 40px;
         }
 
         .brand-logo {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: var(--charcoal);
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 10px;
-            font-weight: 800;
-        }
-
-        .brand-logo::before {
-            content: '🧁';
-            font-size: 1.6rem;
-            animation: elegantFloat 5s ease-in-out infinite;
         }
 
         .brand-logo span {
-            color: var(--blush-deep);
-            font-weight: 800;
+            color: var(--gold);
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 40px;
-            background: #FFF;
-            padding: 8px 32px;
-            border-radius: 30px;
-            border: 1px solid rgba(248, 215, 232, 0.5);
-            box-shadow: var(--card-shadow);
+            gap: 35px;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-gray);
-            font-size: 0.95rem;
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 600;
+            color: var(--charcoal);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 400;
             transition: var(--transition);
             position: relative;
-            display: inline-block;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         .nav-links a:hover {
-            color: var(--blush-deep);
-            transform: translateY(-1px);
+            color: var(--gold);
         }
 
         .nav-icons {
             display: flex;
-            gap: 18px;
+            gap: 25px;
             font-size: 1.2rem;
         }
 
@@ -287,45 +245,32 @@
             cursor: pointer;
             transition: var(--transition);
             position: relative;
-            background: #FFF;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(248, 215, 232, 0.5);
-            box-shadow: var(--card-shadow);
         }
 
         .nav-icons a:hover, .cart-icon-wrapper:hover {
-            color: var(--blush-deep);
-            transform: translateY(-2px);
-            background: var(--ivory);
-            border-color: var(--blush-deep);
+            color: var(--gold);
+            transform: scale(1.05);
         }
 
         .cart-count {
             position: absolute;
-            top: -4px;
-            right: -4px;
-            background-color: var(--blush-deep);
+            top: -8px;
+            right: -12px;
+            background-color: var(--gold);
             color: white;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             padding: 2px 6px;
-            border-radius: 10px;
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 700;
-            border: 2px solid #FFF;
+            border-radius: 50%;
+            font-family: 'Poppins', sans-serif;
         }
 
         .menu-toggle {
             display: none;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             cursor: pointer;
         }
 
-        /* --- HERO PREMIUM VISUAL ANCHOR --- */
+        /* --- HERO SECTION --- */
         #home {
             height: 100vh;
             position: relative;
@@ -334,79 +279,51 @@
             justify-content: center;
             text-align: center;
             color: var(--charcoal);
-            padding: 0 24px;
-            /* Premium editorial grade imagery canvas combined with modern clean pastel ambient filters */
-            background: linear-gradient(135deg, rgba(255, 249, 237, 0.85), rgba(248, 215, 232, 0.75)), url('https://images.unsplash.com/photo-1535141192574-5d4897c13636?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            padding: 0 20px;
+            background: linear-gradient(rgba(255,253,251,0.65), rgba(247,231,229,0.5)), url('https://images.unsplash.com/photo-1535141192574-5d4897c13636?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             background-attachment: fixed;
-            overflow: hidden;
-        }
-
-        #home::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 100%;
-            height: 40px;
-            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg"><path fill="%23FFF9F5" d="M0,64L120,74.7C240,85,480,107,720,106.7C960,107,1200,85,1320,74.7L1440,64L1440,120L1320,120C1200,120,960,120,720,120C480,120,240,120,120,120L0,120Z"></path></svg>');
-            background-size: cover;
-            z-index: 3;
         }
 
         .hero-content {
             max-width: 800px;
             z-index: 2;
-            background: rgba(255, 255, 255, 0.85);
-            padding: 60px 45px;
-            border-radius: 40px;
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 30px 70px rgba(113, 97, 96, 0.08);
-            animation: cleanGlow 6s infinite alternate ease-in-out;
-        }
-
-        @keyframes cleanGlow {
-            0% { box-shadow: 0 30px 70px rgba(113, 97, 96, 0.06); }
-            100% { box-shadow: 0 30px 70px rgba(224, 141, 173, 0.12); }
         }
 
         .hero-content h1 {
-            font-size: 3.8rem;
+            font-size: 4.5rem;
             line-height: 1.2;
-            margin-bottom: 20px;
-            color: var(--charcoal);
-            animation: fadeDown 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+            margin-bottom: 25px;
+            animation: fadeInDown 1.5s ease;
         }
 
         .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 35px;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
             color: var(--text-gray);
-            font-weight: 500;
-            animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+            animation: fadeInUp 1.5s ease;
         }
 
         .hero-btns {
             display: flex;
             justify-content: center;
             gap: 20px;
-            animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+            animation: fadeInUp 1.8s ease;
         }
 
-        @keyframes fadeDown {
+        @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-30px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        @keyframes fadeUp {
+        @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- PRODUCT CURATED ARCHITECTURE --- */
+        /* --- FEATURED COLLECTIONS & BEST SELLERS --- */
         section {
-            padding: 100px 30px;
-            max-width: 1300px;
+            padding: 100px 40px;
+            max-width: 1400px;
             margin: 0 auto;
             position: relative;
         }
@@ -418,70 +335,65 @@
         }
 
         .product-card {
-            background: #FFF;
-            border-radius: 24px;
+            background: var(--ivory);
+            border: 1px solid rgba(44, 38, 37, 0.05);
+            border-radius: 4px;
             overflow: hidden;
             position: relative;
-            box-shadow: var(--card-shadow);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
             transition: var(--transition);
-            border: 1px solid rgba(113, 97, 96, 0.04);
         }
 
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(113, 97, 96, 0.08);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.1);
+            border-color: rgba(212, 175, 55, 0.3);
         }
 
         .img-container {
-            height: 340px;
+            height: 380px;
             overflow: hidden;
             position: relative;
-            background-color: var(--ivory);
+            background-color: var(--beige);
         }
 
         .img-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .product-card:hover .img-container img {
-            transform: scale(1.06);
+            transform: scale(1.08);
         }
 
         .badge {
             position: absolute;
             top: 20px;
             left: 20px;
-            background: #FFF;
-            color: var(--charcoal);
-            padding: 6px 14px;
-            font-size: 0.8rem;
-            font-family: 'DM Sans', sans-serif;
+            background: var(--gold);
+            color: white;
+            padding: 4px 12px;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 700;
+            letter-spacing: 1px;
+            font-weight: 500;
             z-index: 2;
-            border-radius: 30px;
-            box-shadow: var(--card-shadow);
-            border: 1px solid rgba(248, 215, 232, 0.6);
         }
 
         .product-actions {
             position: absolute;
-            bottom: -70px;
+            bottom: -50px;
             left: 0;
             width: 100%;
             display: flex;
             justify-content: center;
             gap: 15px;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 16px;
+            background: rgba(255, 253, 251, 0.9);
+            padding: 15px;
             transition: var(--transition);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(248, 215, 232, 0.3);
+            backdrop-filter: blur(5px);
         }
 
         .product-card:hover .product-actions {
@@ -489,72 +401,59 @@
         }
 
         .action-btn {
-            background: #FFF;
-            color: var(--charcoal);
-            border: 1px solid rgba(113, 97, 96, 0.15);
-            width: 44px;
-            height: 44px;
+            background: var(--charcoal);
+            color: var(--ivory);
+            border: none;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: var(--transition);
-            box-shadow: var(--card-shadow);
-            font-size: 1rem;
         }
 
         .action-btn:hover {
-            background: var(--blush);
-            color: var(--charcoal);
-            border-color: var(--blush-deep);
-            transform: scale(1.05);
+            background: var(--gold);
+            color: white;
         }
 
         .product-info {
-            padding: 28px 24px;
+            padding: 25px;
             text-align: center;
         }
 
         .product-category {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            font-family: 'DM Sans', sans-serif;
-            letter-spacing: 0.08em;
+            letter-spacing: 1.5px;
             color: var(--gold);
-            margin-bottom: 6px;
-            font-weight: 700;
+            margin-bottom: 8px;
         }
 
         .product-info h3 {
             font-size: 1.4rem;
             margin-bottom: 10px;
-            color: var(--charcoal);
         }
 
         .rating {
-            color: var(--peach);
-            font-size: 0.9rem;
-            margin-bottom: 14px;
+            color: var(--gold);
+            font-size: 0.8rem;
+            margin-bottom: 12px;
         }
 
         .price {
-            font-size: 1.25rem;
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 700;
+            font-size: 1.2rem;
+            font-weight: 500;
             color: var(--charcoal);
-            background: var(--ivory);
-            display: inline-block;
-            padding: 4px 18px;
-            border-radius: 30px;
-            border: 1px solid rgba(214, 163, 115, 0.2);
         }
 
-        /* --- APPROACHABLE ABOUT NARRATIVE --- */
+        /* --- ABOUT SECTION --- */
         .about-wrapper {
             display: flex;
             align-items: center;
-            gap: 70px;
+            gap: 80px;
         }
 
         .about-img, .about-text {
@@ -563,168 +462,133 @@
 
         .about-img-box {
             position: relative;
+            padding: 20px;
         }
 
         .about-img-box img {
             width: 100%;
-            max-height: 520px;
+            max-height: 600px;
             object-fit: cover;
-            border-radius: 30px;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
+            border-radius: 4px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
         }
-        
-        .about-img-box:hover img {
-            transform: scale(1.02);
+
+        .about-img-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80%;
+            height: 90%;
+            border: 1px solid var(--gold);
+            z-index: -1;
+            transform: translate(-15px, -15px);
         }
 
         .about-text h3 {
             font-size: 2.2rem;
-            margin-bottom: 18px;
-            color: var(--charcoal);
+            margin-bottom: 20px;
         }
 
         .about-text p {
             color: var(--text-gray);
-            margin-bottom: 24px;
-            font-size: 1.1rem;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
         }
 
         .about-features {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
-            margin-top: 30px;
         }
 
         .feature-item {
             display: flex;
             align-items: center;
-            gap: 16px;
-            background: #FFF;
-            padding: 18px;
-            border-radius: 20px;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
-            border: 1px solid rgba(113, 97, 96, 0.02);
-        }
-
-        .feature-item:hover {
-            transform: translateY(-3px);
-            background: var(--ivory);
+            gap: 15px;
         }
 
         .feature-item i {
-            font-size: 1.4rem;
-            color: var(--blush-deep);
-            background: var(--blush);
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        
-        .feature-item h4 {
-            font-size: 0.95rem;
-            color: var(--charcoal);
-            font-weight: 600;
+            font-size: 1.5rem;
+            color: var(--gold);
         }
 
-        /* --- CUSTOM BOOKING MANAGEMENT CONCIERGE --- */
+        /* --- CUSTOM BOOKING CONCIERGE --- */
         #booking {
-            background: linear-gradient(180deg, var(--ivory), #F5FAFF, var(--ivory));
+            background-color: var(--beige);
             max-width: 100%;
         }
 
         .booking-container {
-            max-width: 1150px;
+            max-width: 1200px;
             margin: 0 auto;
-            background: #FFF;
-            padding: 55px;
-            border-radius: 35px;
-            box-shadow: var(--card-shadow);
+            background: var(--ivory);
+            padding: 60px;
+            border-radius: 8px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.03);
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
-            border: 1px solid rgba(113, 97, 96, 0.03);
         }
 
         .booking-info h3 {
             font-size: 2.2rem;
-            margin-bottom: 18px;
-            color: var(--charcoal);
+            margin-bottom: 20px;
         }
 
         .booking-info p {
             color: var(--text-gray);
-            margin-bottom: 35px;
-            font-size: 1.05rem;
+            margin-bottom: 40px;
         }
 
         .live-pricing-card {
-            background: linear-gradient(135deg, var(--ivory), var(--blush));
+            background: var(--blush);
             padding: 30px;
-            border-radius: 24px;
-            border: 1px solid rgba(224, 141, 173, 0.3);
-            text-align: center;
-            position: relative;
+            border-radius: 4px;
+            border-left: 4px solid var(--gold);
         }
 
         .live-pricing-card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            color: var(--text-gray);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
         }
 
         .form-group {
-            margin-bottom: 22px;
+            margin-bottom: 25px;
         }
 
         .form-group label {
             display: block;
-            font-size: 0.9rem;
-            font-family: 'DM Sans', sans-serif;
-            letter-spacing: 0.2px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--charcoal);
+            font-weight: 500;
         }
 
         .form-group input, .form-group select, .form-group textarea {
             width: 100%;
-            padding: 14px 18px;
-            border: 1px solid rgba(113, 97, 96, 0.15);
+            padding: 14px;
+            border: 1px solid rgba(44, 38, 37, 0.15);
             background: var(--ivory);
             font-size: 1rem;
             color: var(--charcoal);
             transition: var(--transition);
-            border-radius: 16px;
-            font-weight: 500;
         }
 
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
             outline: none;
-            border-color: var(--blush-deep);
-            background: #FFF;
-            box-shadow: 0 0 0 4px rgba(224, 141, 173, 0.1);
+            border-color: var(--gold);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
         }
 
-        /* --- STYLISH TESTIMONIAL CARDS --- */
+        /* --- TESTIMONIALS --- */
         .testimonial-slider {
-            max-width: 850px;
+            max-width: 900px;
             margin: 0 auto;
             position: relative;
             overflow: hidden;
             height: 350px;
-            background: #FFF;
-            border-radius: 35px;
-            box-shadow: var(--card-shadow);
-            border: 1px solid rgba(113, 97, 96, 0.03);
         }
 
         .testimonial-slide {
@@ -734,13 +598,12 @@
             width: 100%;
             height: 100%;
             opacity: 0;
-            transition: opacity 0.8s ease-in-out;
+            transition: opacity 1s ease-in-out;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
             justify-content: center;
-            padding: 45px;
         }
 
         .testimonial-slide.active {
@@ -749,45 +612,42 @@
         }
 
         .client-img {
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 18px;
-            border: 3px solid var(--blush);
+            margin-bottom: 20px;
+            border: 2px solid var(--gold);
         }
 
         .testimonial-slide p {
-            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-style: italic;
             color: var(--charcoal);
             margin-bottom: 20px;
-            max-width: 680px;
-            font-weight: 500;
+            max-width: 750px;
         }
 
         .client-name {
-            font-weight: 700;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.9rem;
-            letter-spacing: 0.05em;
+            font-weight: 600;
             text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
             color: var(--gold);
         }
 
-        /* --- CLEAN GALLERY WORKSPACE --- */
+        /* --- ATELIER INSTAGRAM GALLERY --- */
         .instagram-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
+            gap: 15px;
         }
 
         .instagram-item {
             position: relative;
-            height: 280px;
+            height: 300px;
             overflow: hidden;
-            border-radius: 20px;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
         }
 
         .instagram-item img {
@@ -800,20 +660,20 @@
         .instagram-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(248, 215, 232, 0.85);
+            background: rgba(44, 38, 37, 0.6);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--charcoal);
-            font-size: 1.8rem;
+            color: white;
+            font-size: 1.5rem;
             opacity: 0;
             transition: var(--transition);
         }
 
         .instagram-item:hover .instagram-overlay { opacity: 1; }
-        .instagram-item:hover img { transform: scale(1.05); }
+        .instagram-item:hover img { transform: scale(1.1); }
 
-        /* --- WELCOMING CONTACT SEGMENT --- */
+        /* --- CONTACT & ATELIER INFO --- */
         .contact-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -821,50 +681,39 @@
         }
 
         .info-panel i {
-            color: var(--blush-deep);
-            background: #FFF;
-            margin-right: 14px;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--card-shadow);
+            color: var(--gold);
+            margin-right: 15px;
+            width: 20px;
         }
 
         .info-panel p {
-            margin-bottom: 22px;
-            font-size: 1.05rem;
-            display: flex;
-            align-items: center;
-            color: var(--text-gray);
+            margin-bottom: 20px;
         }
 
         .map-container {
-            height: 280px;
-            background: #E5E5E5;
+            height: 300px;
+            background: #e5e5e5;
             margin-top: 30px;
-            border-radius: 24px;
+            border-radius: 4px;
             overflow: hidden;
-            box-shadow: var(--card-shadow);
         }
 
-        /* --- MINIMALIST SHOPPING BAG --- */
+        /* --- SHOPPING CART DRAWER (Glassmorphism) --- */
         .cart-drawer {
             position: fixed;
             top: 0;
             right: -450px;
             width: 420px;
             height: 100vh;
-            background: #FFF;
-            box-shadow: -10px 0 40px rgba(113, 97, 96, 0.05);
+            background: rgba(255, 253, 251, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: -10px 0 40px rgba(0,0,0,0.05);
             z-index: 2000;
             transition: var(--transition);
             padding: 40px;
             display: flex;
             flex-direction: column;
-            border-left: 1px solid rgba(113, 97, 96, 0.08);
         }
 
         .cart-drawer.open {
@@ -875,24 +724,18 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 35px;
-            border-bottom: 1px solid rgba(113, 97, 96, 0.08);
-            padding-bottom: 18px;
-        }
-        
-        .cart-header h3 {
-            font-size: 1.5rem;
-            color: var(--charcoal);
+            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(44, 38, 37, 0.1);
+            padding-bottom: 20px;
         }
 
         .close-cart {
             font-size: 1.5rem;
             cursor: pointer;
             transition: var(--transition);
-            color: var(--text-gray);
         }
 
-        .close-cart:hover { color: var(--blush-deep); }
+        .close-cart:hover { color: var(--gold); }
 
         .cart-items {
             flex: 1;
@@ -901,62 +744,55 @@
 
         .cart-item {
             display: flex;
-            gap: 16px;
-            margin-bottom: 20px;
+            gap: 20px;
+            margin-bottom: 25px;
             align-items: center;
-            background: var(--ivory);
-            padding: 14px;
-            border-radius: 16px;
-            border: 1px solid rgba(113, 97, 96, 0.03);
         }
 
         .cart-item img {
             width: 70px;
             height: 70px;
             object-fit: cover;
-            border-radius: 12px;
+            border-radius: 4px;
         }
 
-        .cart-item-details h4 { font-size: 1rem; color: var(--charcoal); }
-        .cart-item-details p { color: var(--gold); font-weight: 700; font-size: 0.95rem; margin-top: 4px; }
+        .cart-item-details h4 { font-size: 1rem; }
+        .cart-item-details p { color: var(--gold); font-size: 0.9rem;}
 
         .cart-footer {
-            border-top: 1px solid rgba(113, 97, 96, 0.08);
-            padding-top: 25px;
+            border-top: 1px solid rgba(44, 38, 37, 0.1);
+            padding-top: 30px;
         }
 
         .cart-total {
             display: flex;
             justify-content: space-between;
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 18px;
-            font-family: 'DM Sans', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 20px;
         }
 
-        /* --- LIGHT PREMIUM FOOTER --- */
+        /* --- FOOTER --- */
         footer {
-            background: linear-gradient(180deg, var(--ivory), #FFF);
-            color: var(--charcoal);
-            padding: 80px 30px 40px;
-            position: relative;
-            border-top: 1px solid rgba(113, 97, 96, 0.05);
+            background-color: var(--charcoal);
+            color: var(--ivory);
+            padding: 80px 40px 30px;
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 2fr;
             gap: 40px;
-            max-width: 1300px;
-            margin: 0 auto 50px;
+            max-width: 1400px;
+            margin: 0 auto 60px;
         }
 
         .footer-col h4 {
-            color: var(--charcoal);
-            font-size: 1rem;
-            margin-bottom: 20px;
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 25px;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 1px;
         }
 
         .footer-col ul {
@@ -964,93 +800,82 @@
         }
 
         .footer-col ul li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .footer-col ul li a {
-            color: var(--text-gray);
+            color: rgba(255,253,251,0.7);
             text-decoration: none;
             transition: var(--transition);
-            font-weight: 500;
-            font-size: 0.95rem;
         }
 
         .footer-col ul li a:hover {
-            color: var(--blush-deep);
+            color: var(--gold);
+            padding-left: 5px;
         }
 
         .newsletter-form input {
             padding: 14px;
-            border: 1px solid rgba(113, 97, 96, 0.15);
-            background: #FFF;
-            color: var(--charcoal);
+            border: 1px solid rgba(255,253,251,0.2);
+            background: transparent;
+            color: white;
             width: 100%;
-            margin-bottom: 12px;
-            border-radius: 14px;
+            margin-bottom: 15px;
         }
 
         .footer-bottom {
-            max-width: 1300px;
+            max-width: 1400px;
             margin: 0 auto;
-            border-top: 1px solid rgba(113, 97, 96, 0.06);
-            padding-top: 25px;
+            border-top: 1px solid rgba(255,253,251,0.1);
+            padding-top: 30px;
             display: flex;
             justify-content: space-between;
-            font-size: 0.9rem;
-            color: var(--text-gray);
+            font-size: 0.85rem;
+            color: rgba(255,253,251,0.5);
         }
 
         .footer-socials a {
-            color: var(--text-gray);
-            margin-left: 18px;
+            color: white;
+            margin-left: 20px;
             font-size: 1.1rem;
             transition: var(--transition);
-            display: inline-block;
         }
 
-        .footer-socials a:hover { color: var(--blush-deep); transform: translateY(-2px); }
+        .footer-socials a:hover { color: var(--gold); }
 
-        /* --- SYSTEM RESPONSIVE SCALING --- */
+        /* --- RESPONSIVE STYLING --- */
         @media (max-width: 1024px) {
             .footer-grid { grid-template-columns: 1fr 1fr; }
             .about-wrapper, .booking-container, .contact-layout { grid-template-columns: 1fr; gap: 40px;}
             .instagram-grid { grid-template-columns: repeat(2, 1fr); }
-            .hero-content h1 { font-size: 3rem; }
+            .hero-content h1 { font-size: 3.2rem; }
         }
 
         @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
-                top: 75px;
+                top: 80px;
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 75px);
-                background: #FFF;
+                height: calc(100vh - 80px);
+                background: var(--ivory);
                 flex-direction: column;
                 align-items: center;
-                padding-top: 40px;
+                padding-top: 60px;
                 transition: var(--transition);
-                border-radius: 0;
-                border: 0;
-                border-top: 1px solid rgba(113, 97, 96, 0.08);
             }
             .nav-links.open { left: 0; }
-            .menu-toggle { display: flex; background: #FFF; width: 40px; height: 40px; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid rgba(113, 97, 96, 0.08); }
-            section { padding: 70px 20px; }
-            .hero-content h1 { font-size: 2.3rem; }
+            .menu-toggle { display: block; }
+            section { padding: 60px 20px; }
+            .hero-content h1 { font-size: 2.5rem; }
             .booking-container { padding: 30px; }
             .footer-grid { grid-template-columns: 1fr; }
-            .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+            .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
             .cart-drawer { width: 100%; right: -100%; }
         }
     </style>
 </head>
 <body>
-
-    <div class="petal-bg bg-candy-1">🧁</div>
-    <div class="petal-bg bg-candy-2">✨</div>
-    <div class="petal-bg bg-candy-3">🍩</div>
-    <div class="petal-bg bg-candy-4">🍬</div>
 
     <header id="navbar">
         <div class="nav-container">
@@ -1075,11 +900,11 @@
 
     <div class="cart-drawer" id="cartDrawer">
         <div class="cart-header">
-            <h3>Your Sweet Bag</h3>
+            <h3>Your Atelier Bag</h3>
             <div class="close-cart" onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></div>
         </div>
         <div class="cart-items" id="cartItems">
-            <p style="text-align: center; color: var(--text-gray); margin-top: 40px; font-weight: 600;">Your bag is currently empty.</p>
+            <p style="text-align: center; color: var(--text-gray); margin-top: 40px;">Your bag is currently empty.</p>
         </div>
         <div class="cart-footer">
             <div class="cart-total">
@@ -1087,10 +912,10 @@
                 <span id="cart-subtotal">R0.00</span>
             </div>
             <div class="form-group" style="margin-bottom: 15px;">
-                <input type="text" placeholder="Promo Code" style="padding: 12px; background: white;">
+                <input type="text" placeholder="Promo Code" style="padding: 10px;">
             </div>
-            <button class="btn-luxury btn-gold" style="width: 100%;">Proceed to Checkout 🚀</button>
-            <div style="text-align: center; margin-top: 20px; font-size: 1.6rem; color: var(--blush-deep); letter-spacing: 5px;">
+            <button class="btn-luxury btn-gold" style="width: 100%;">Proceed to Checkout</button>
+            <div style="text-align: center; margin-top: 15px; font-size: 1.2rem; color: var(--text-gray);">
                 <i class="fa-brands fa-cc-visa"></i>
                 <i class="fa-brands fa-cc-mastercard"></i>
                 <i class="fa-brands fa-cc-amex"></i>
@@ -1101,8 +926,8 @@
 
     <section id="home">
         <div class="hero-content">
-            <h1>Beautiful Cakes Made for Sweet Celebrations 🎂✨</h1>
-            <p>Bespoke magical cakes designed with artistic joy and baked fresh with the world's finest premium ingredients.</p>
+            <h1>Crafting Sweet Moments with Elegance</h1>
+            <p>Bespoke luxury cakes designed with artistic perfection and baked fresh with the world's finest premium ingredients.</p>
             <div class="hero-btns">
                 <a href="#collections" class="btn-luxury btn-gold">View Collections</a>
                 <a href="#booking" class="btn-luxury">Custom Request</a>
@@ -1178,9 +1003,9 @@
             <div class="about-text">
                 <div class="section-title" style="text-align: left; margin-bottom: 30px;">
                     <span>Our Story</span>
-                    <h2 style="font-size: 2.5rem; line-height: 1.2;">Homemade Happiness In Every Slice</h2>
+                    <h2 style="font-size: 2.5rem;">Pure Elegance In Every Slice</h2>
                 </div>
-                <p>Founded on the principles of sweet memories and joyful family moments, Rose Cakes crafts magical baking experiences. Our bespoke designs blend contemporary artistic elegance with time-tested recipes to deliver a breathtaking centerpiece for your milestones.</p>
+                <p>Founded on the principles of Haute Couture baking, Rose Cakes crafts haute-luxury experiences. Our bespoke designs blend contemporary artistic elegance with time-tested recipes to deliver a breathtaking centerpiece for your milestones.</p>
                 <p>We source only ultra-premium ingredients: organic Madagascar bourbon vanilla pods, pure Belgian chocolate couvertures, and rich European-style cultured butter.</p>
                 <div class="about-features">
                     <div class="feature-item">
@@ -1211,13 +1036,13 @@
                 <p>Let our master culinary artists bring your ultimate vision to life. Fill out your event specifics and our concierge team will reach out within 24 hours to design your tailored experience.</p>
                 <div class="live-pricing-card">
                     <h4>Est. Studio Base Price</h4>
-                    <p id="live-price-val" style="font-size: 2.4rem; color: var(--charcoal); font-family: 'DM Sans', sans-serif; font-weight:700;">R150.00</p>
-                    <p style="font-size: 0.85rem; margin-top:5px; opacity:0.8; font-weight: 600;">*Final estimates will include detailed ornamentation and design complexity.</p>
+                    <p id="live-price-val" style="font-size: 2rem; color: var(--gold); font-weight:600;">R150.00</p>
+                    <p style="font-size: 0.8rem; margin-top:5px; opacity:0.7;">*Final estimates will include detailed ornamentation and design complexity.</p>
                 </div>
             </div>
             <form id="cake-booking-form" onchange="updateBookingEstimate()">
                 <div class="form-group">
-                    <label><i class="fa-solid fa-star" style="color: var(--gold); margin-right: 5px;"></i> Event Classification</label>
+                    <label>Event Classification</label>
                     <select id="booking-event">
                         <option value="100">Gala & Wedding Anniversary</option>
                         <option value="50">Luxury Birthday Banquet</option>
@@ -1225,7 +1050,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label><i class="fa-solid fa-cake-candles" style="color: var(--blush-deep); margin-right: 5px;"></i> Tier Architecture (Size)</label>
+                    <label>Tier Architecture (Size)</label>
                     <select id="booking-size">
                         <option value="150">3-Tiers Grand (Serves 75-100)</option>
                         <option value="100">2-Tiers Opulent (Serves 40-60)</option>
@@ -1233,7 +1058,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label><i class="fa-solid fa-ice-cream" style="color: var(--beige); margin-right: 5px;"></i> Flavor Profiles</label>
+                    <label>Flavor Profiles</label>
                     <select id="booking-flavor">
                         <option value="0">Champagne Infused Raspberry Ganache</option>
                         <option value="20">Salted Caramel Praline Gold Tart</option>
@@ -1241,14 +1066,14 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label><i class="fa-solid fa-cloud-arrow-up" style="color: var(--lavender); margin-right: 5px;"></i> Upload Inspiration Moodboard</label>
-                    <input type="file" style="padding: 12px; background: white;">
+                    <label>Upload Inspiration Moodboard</label>
+                    <input type="file" style="border: none; padding: 10px 0;">
                 </div>
                 <div class="form-group">
-                    <label><i class="fa-solid fa-wand-magic-sparkles" style="color: var(--gold); margin-right: 5px;"></i> Special Artistic Requests</label>
+                    <label>Special Artistic Requests</label>
                     <textarea rows="3" placeholder="Gold leaf accents, specific floral pairings..."></textarea>
                 </div>
-                <button type="submit" class="btn-luxury btn-gold" style="width: 100%;">Submit Luxury Design Request ✨</button>
+                <button type="submit" class="btn-luxury btn-gold" style="width: 100%;">Submit Luxury Design Request</button>
             </form>
         </div>
     </section>
@@ -1262,12 +1087,12 @@
             <div class="testimonial-slide active">
                 <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Client" class="client-img">
                 <p>"The wedding cake designed by Rose Cakes was an absolute masterpiece. It was the talk of our evening reception and tasted pure luxury!"</p>
-                <span class="client-name">Victoria H. — Beverly Hills</span>
+                <span class="client-name">Victoria H. &mdash; Beverly Hills</span>
             </div>
             <div class="testimonial-slide">
                 <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Client" class="client-img">
                 <p>"Incredible attention to detail. The gold foil and edible luxury sugar flowers were visually stunning and exceptionally well crafted."</p>
-                <span class="client-name">Maximilian D. — Manhattan Gala</span>
+                <span class="client-name">Maximilian D. &mdash; Manhattan Gala</span>
             </div>
         </div>
     </section>
@@ -1311,11 +1136,11 @@
                 <a href="https://wa.me/1234567890" target="_blank" class="btn-luxury btn-gold" style="margin-top: 20px;"><i class="fa-brands fa-whatsapp"></i> Chat On WhatsApp</a>
                 
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.733248043701!2d-118.4028383234241!3d34.063561617208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc0bc7edf0e3%3A0x1d60db2d43e5c9a1!2sRodeo%20Dr%2C%20Beverly%20Hills%2C%20CA%2090210!5e0!3m2!1sen!2sus!4v1684345678901!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.733248043701!2d-118.4028383234241!3d34.063561617208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc0bc7edf0e3%3A0x1d60db2d43e5c9a1!2sRodeo%20Dr%2C%20Beverly%20Hills%2C%20CA%2090210!5e0!3m2!1sen!2sus!4v1684345678901!5m2!1sen!2sus" width="100%" height="100%" style="border:0; filter: grayscale(1) contrast(1.2) invert(0);" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
-            <div style="background: white; padding: 40px; border-radius: 24px; box-shadow: var(--card-shadow); border: 1px solid rgba(113, 97, 96, 0.05);">
-                <h3 style="margin-bottom: 30px; font-size: 1.8rem; color: var(--charcoal);">Send An Inquiry</h3>
+            <div style="background: var(--beige); padding: 40px; border-radius: 4px;">
+                <h3 style="margin-bottom: 30px; font-size: 1.8rem;">Send An Inquiry</h3>
                 <form action="#">
                     <div class="form-group">
                         <label>Your Name</label>
@@ -1329,7 +1154,7 @@
                         <label>Message</label>
                         <textarea rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn-luxury" style="width: 100%;">Send Message 💌</button>
+                    <button type="submit" class="btn-luxury" style="width: 100%;">Send Message</button>
                 </form>
             </div>
         </div>
@@ -1338,8 +1163,8 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <a href="#" class="brand-logo" style="color: var(--charcoal); margin-bottom: 20px;">Rose<span>Cakes</span></a>
-                <p style="color: var(--text-gray); font-size: 0.95rem;">Artisanal perfection, tailored luxury baking experiences for life’s most elegant celebrations.</p>
+                <a href="#" class="brand-logo" style="color: white; margin-bottom: 20px;">Rose<span>Cakes</span></a>
+                <p style="color: rgba(255,253,251,0.6); font-size: 0.95rem;">Artisanal perfection, tailored luxury baking experiences for life’s most elegant celebrations.</p>
             </div>
             <div class="footer-col">
                 <h4>Explore</h4>
@@ -1361,15 +1186,15 @@
             </div>
             <div class="footer-col">
                 <h4>Join The Atelier List</h4>
-                <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 15px;">Receive private collection previews, luxury flavor releases, and priority booking invitations.</p>
+                <p style="color: rgba(255,253,251,0.6); font-size: 0.85rem; margin-bottom: 15px;">Receive private collection previews, luxury flavor releases, and priority booking invitations.</p>
                 <form class="newsletter-form">
                     <input type="email" placeholder="Your Email Address">
-                    <button type="submit" class="btn-luxury btn-gold" style="width: 100%;">Subscribe ✨</button>
+                    <button type="submit" class="btn-luxury btn-gold" style="width: 100%; color: white;">Subscribe</button>
                 </form>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 Rose Cakes Brand Inc. All Worldwide Rights Reserved.</p>
+            <p>&copy; 2026 Rose Cakes Brand Inc. All Worldwide Rights Reserved.</p>
             <div class="footer-socials">
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#"><i class="fa-brands fa-pinterest"></i></a>
@@ -1419,7 +1244,7 @@
             const subtotalElement = document.getElementById('cart-subtotal');
             
             if(cart.length === 0) {
-                cartItemsContainer.innerHTML = `<p style="text-align: center; color: var(--text-gray); margin-top: 40px; font-weight:600;">Your bag is currently empty.</p>`;
+                cartItemsContainer.innerHTML = `<p style="text-align: center; color: var(--text-gray); margin-top: 40px;">Your bag is currently empty.</p>`;
                 cartCountElement.innerText = '0';
                 subtotalElement.innerText = 'R0.00';
                 return;
@@ -1436,8 +1261,8 @@
                     <div class="cart-item">
                         <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=100&q=80" alt="Product Image">
                         <div class="cart-item-details">
-                            <h4>${item.name}</h4>
-                            <p>${item.qty} x R${item.price}.00</p>
+                            <h4>R{item.name}</h4>
+                            <p>R{item.qty} x RR{item.price}.00</p>
                         </div>
                     </div>
                 `;
@@ -1445,7 +1270,7 @@
 
             cartItemsContainer.innerHTML = itemsHTML;
             cartCountElement.innerText = totalQty;
-            subtotalElement.innerText = `R${total}.00`;
+            subtotalElement.innerText = `RR{total}.00`;
         }
 
         // --- CONCIERGE LIVE PRICING CALCULATOR ---
@@ -1455,7 +1280,7 @@
             const flavorVal = parseInt(document.getElementById('booking-flavor').value) || 0;
             
             const totalEstimate = 150 + eventVal + sizeVal + flavorVal;
-            document.getElementById('live-price-val').innerText = `R${totalEstimate}.00`;
+            document.getElementById('live-price-val').innerText = `RR{totalEstimate}.00`;
         }
 
         // --- TESTIMONIAL CAROUSEL TRANSITIONS ---
