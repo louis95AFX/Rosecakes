@@ -29,7 +29,7 @@
             /* High-end Ultra-clean Glassmorphism */
             --glass-nav: rgba(255, 249, 251, 0.75);
             --glass-card: rgba(255, 255, 255, 0.65);
-            --glass-drawer: rgba(255, 249, 251, 0.85);
+            --glass-drawer: rgba(255, 249, 251, 0.9);
             
             /* Sophisticated structural elements */
             --transition-fluid: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -69,8 +69,8 @@
         /* --- SKEW / BLUR AMBIENT DECORATIONS --- */
         .ambient-glow {
             position: absolute;
-            width: 600px;
-            height: 600px;
+            width: min(600px, 100vw);
+            height: min(600px, 100vw);
             background: radial-gradient(circle, rgba(251,207,232,0.35) 0%, rgba(255,249,251,0) 70%);
             top: -200px;
             right: -100px;
@@ -92,11 +92,11 @@
         }
 
         .section-heading {
-            font-size: 3.25rem;
+            font-size: clamp(2rem, 4vw, 3.25rem);
             line-height: 1.15;
             font-weight: 300;
             color: var(--luxury-dark);
-            margin-bottom: 60px;
+            margin-bottom: clamp(30px, 5vw, 60px);
         }
 
         .section-heading strong {
@@ -122,6 +122,7 @@
             cursor: pointer;
             transition: var(--transition-fluid);
             overflow: hidden;
+            white-space: nowrap;
         }
 
         .btn-atelier::before {
@@ -187,7 +188,6 @@
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
             border-bottom: 1px solid var(--border-light);
-            padding: 5px 0;
         }
 
         .nav-container {
@@ -197,6 +197,11 @@
             justify-content: space-between;
             align-items: center;
             padding: 26px 40px;
+            transition: var(--transition-fast);
+        }
+
+        header.scrolled .nav-container {
+            padding: 15px 40px;
         }
 
         .brand-logo {
@@ -205,6 +210,7 @@
             text-decoration: none;
             color: var(--luxury-dark);
             letter-spacing: -0.04em;
+            z-index: 1001;
         }
 
         .brand-logo span {
@@ -215,7 +221,7 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 50px;
+            gap: clamp(20px, 3vw, 50px);
         }
 
         .nav-links a {
@@ -251,9 +257,10 @@
 
         .nav-icons {
             display: flex;
-            gap: 30px;
+            gap: 25px;
             align-items: center;
             font-size: 1.1rem;
+            z-index: 1001;
         }
 
         .nav-icons a, .cart-icon-wrapper {
@@ -288,17 +295,18 @@
             display: none;
             cursor: pointer;
             font-size: 1.2rem;
+            color: var(--luxury-dark);
         }
 
         /* --- CINEMATIC HERO --- */
         #home {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            padding: 0 10%;
+            padding: 120px 10% 60px 10%;
             position: relative;
-            background: linear-gradient(90deg, rgba(255,249,251,0.92) 30%, rgba(255,249,251,0.4) 100%), url('https://images.unsplash.com/photo-1535141192574-5d4897c13636?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            background: linear-gradient(90deg, rgba(255,249,251,0.94) 35%, rgba(255,249,251,0.5) 100%), url('https://images.unsplash.com/photo-1535141192574-5d4897c13636?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             overflow: hidden;
         }
 
@@ -309,7 +317,7 @@
         }
 
         .hero-content h1 {
-            font-size: 5.5rem;
+            font-size: clamp(2.5rem, 6vw, 5.5rem);
             line-height: 1.05;
             font-weight: 300;
             color: var(--luxury-dark);
@@ -323,7 +331,7 @@
         }
 
         .hero-content p {
-            font-size: 1.1rem;
+            font-size: clamp(1rem, 1.5vw, 1.1rem);
             color: var(--text-muted);
             margin-bottom: 45px;
             max-width: 580px;
@@ -332,12 +340,13 @@
 
         .hero-btns {
             display: flex;
+            flex-wrap: wrap;
             gap: 20px;
         }
 
         /* --- EDITORIAL SECTIONS --- */
         section {
-            padding: 160px 40px;
+            padding: clamp(80px, 10vw, 160px) 40px;
             max-width: 1500px;
             margin: 0 auto;
             position: relative;
@@ -346,8 +355,8 @@
 
         .grid-layout {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-            gap: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
         }
 
         /* --- HIGH-END PRODUCT ARCHITECTURE --- */
@@ -356,6 +365,9 @@
             border: 1px solid var(--border-light);
             transition: var(--transition-fluid);
             position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .product-card:hover {
@@ -365,10 +377,10 @@
         }
 
         .img-container {
-            height: 480px;
+            height: clamp(350px, 40vh, 480px);
             overflow: hidden;
             position: relative;
-            background-color: var(--soft-beige);
+            background-color: #fcf8f9;
         }
 
         .img-container img {
@@ -405,6 +417,7 @@
             height: 100%;
             background: rgba(42, 27, 34, 0.2);
             backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -416,6 +429,25 @@
 
         .product-card:hover .product-actions-overlay {
             opacity: 1;
+        }
+
+        /* Fallback clickable parameters for touch viewports where overlay is hidden */
+        @media (hover: none) {
+            .product-actions-overlay {
+                opacity: 1;
+                background: transparent;
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
+                height: auto;
+                top: auto;
+                bottom: 110px;
+                right: 25px;
+                left: auto;
+                justify-content: flex-end;
+            }
+            .action-circle-btn {
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            }
         }
 
         .action-circle-btn {
@@ -443,6 +475,10 @@
             padding: 35px 25px;
             text-align: left;
             position: relative;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .product-category {
@@ -470,7 +506,7 @@
         .about-wrapper {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
-            gap: 100px;
+            gap: clamp(40px, 8vw, 100px);
             align-items: center;
         }
 
@@ -480,7 +516,7 @@
 
         .about-img-box img {
             width: 100%;
-            height: 650px;
+            height: clamp(400px, 60vh, 650px);
             object-fit: cover;
         }
 
@@ -532,16 +568,16 @@
         .booking-container {
             display: grid;
             grid-template-columns: 0.9fr 1.1fr;
-            gap: 100px;
+            gap: clamp(40px, 8vw, 100px);
             background: white;
             border: 1px solid var(--border-light);
-            padding: 80px;
+            padding: clamp(30px, 6vw, 80px);
         }
 
         .live-pricing-panel {
             background: var(--creamy-white);
             border: 1px dashed var(--border-heavy);
-            padding: 45px;
+            padding: clamp(25px, 4vw, 45px);
             margin-top: 40px;
             text-align: left;
         }
@@ -555,7 +591,7 @@
         }
 
         .live-pricing-panel .price-display {
-            font-size: 3.5rem;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
             color: var(--luxury-dark);
             font-family: 'DM Sans', sans-serif;
             font-weight: 300;
@@ -591,6 +627,7 @@
             font-size: 0.9rem;
             color: var(--luxury-dark);
             transition: var(--transition-fast);
+            border-radius: 0;
         }
 
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
@@ -604,13 +641,17 @@
             max-width: 1000px;
             margin: 0 auto;
             position: relative;
-            min-height: 320px;
+            min-height: 380px;
+        }
+
+        @media (min-width: 769px) {
+            .testimonial-container { min-height: 320px; }
         }
 
         .testimonial-card {
             background: white;
             border: 1px solid var(--border-light);
-            padding: 60px;
+            padding: clamp(30px, 5vw, 60px);
             text-align: center;
             position: absolute;
             top: 0;
@@ -630,7 +671,7 @@
         }
 
         .testimonial-card p {
-            font-size: 1.5rem;
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
             font-style: italic;
             font-weight: 300;
             color: var(--luxury-dark);
@@ -670,7 +711,7 @@
         .instagram-wrapper-block {
             position: relative;
             overflow: hidden;
-            height: 400px;
+            height: clamp(280px, 40vh, 400px);
         }
 
         .instagram-wrapper-block:nth-child(even) {
@@ -689,6 +730,7 @@
             top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(42, 27, 34, 0.4);
             backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -705,7 +747,7 @@
         .contact-grid {
             display: grid;
             grid-template-columns: 0.9fr 1.1fr;
-            gap: 100px;
+            gap: clamp(40px, 8vw, 100px);
         }
 
         .contact-details-panel {
@@ -748,7 +790,7 @@
         .map-wrapper-frame {
             height: 350px;
             border: 1px solid var(--border-light);
-            filter: grayscale(1) contrast(1.1) invert(0);
+            filter: grayscale(1) contrast(1.1);
             transition: var(--transition-fluid);
         }
 
@@ -760,15 +802,15 @@
         .cart-drawer {
             position: fixed;
             top: 0;
-            right: -500px;
-            width: 480px;
+            right: -100%;
+            width: min(480px, 100vw);
             height: 100vh;
             background: var(--glass-drawer);
             backdrop-filter: blur(30px);
             -webkit-backdrop-filter: blur(30px);
             z-index: 2000;
             transition: var(--transition-fluid);
-            padding: 50px;
+            padding: clamp(20px, 5vw, 50px);
             display: flex;
             flex-direction: column;
             border-left: 1px solid var(--border-light);
@@ -796,6 +838,7 @@
             cursor: pointer;
             font-size: 1.2rem;
             transition: var(--transition-fast);
+            padding: 10px;
         }
 
         .cart-close-trigger:hover { color: var(--primary-pink); }
@@ -803,6 +846,8 @@
         .cart-scroll-node {
             flex: 1;
             overflow-y: auto;
+            margin-right: -10px;
+            padding-right: 10px;
         }
 
         .editorial-cart-item {
@@ -834,6 +879,7 @@
         .cart-drawer-footer {
             border-top: 1px solid var(--border-light);
             padding-top: 30px;
+            background: transparent;
         }
 
         .cart-summary-line {
@@ -849,6 +895,7 @@
             top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(42, 27, 34, 0.5);
             backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             z-index: 3000;
             display: flex;
             align-items: center;
@@ -856,6 +903,7 @@
             opacity: 0;
             visibility: hidden;
             transition: var(--transition-fluid);
+            padding: 20px;
         }
 
         .luxury-modal.open {
@@ -866,13 +914,15 @@
         .modal-body-container {
             background: white;
             width: 900px;
-            max-width: 95%;
+            max-width: 100%;
+            max-height: 90vh;
             display: grid;
             grid-template-columns: 1fr 1fr;
             position: relative;
             border: 1px solid var(--border-light);
             transform: translateY(30px);
             transition: var(--transition-fluid);
+            overflow-y: auto;
         }
 
         .luxury-modal.open .modal-body-container {
@@ -886,31 +936,38 @@
             cursor: pointer;
             z-index: 10;
             transition: var(--transition-fast);
+            background: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         .modal-close:hover { color: var(--primary-pink); }
 
-        .modal-img-frame { height: 500px; background: var(--soft-beige); }
-        .modal-img-frame img { width: 100%; height: 100%; object-fit: cover; }
+        .modal-img-frame { height: 100%; min-height: 350px; background: #fcf8f9; }
+        .modal-img-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
         
-        .modal-content-panel { padding: 50px; display: flex; flex-direction: column; justify-content: center; }
-        .modal-content-panel h3 { font-size: 2.2rem; margin-bottom: 15px; font-weight: 300; }
+        .modal-content-panel { padding: clamp(25px, 5vw, 50px); display: flex; flex-direction: column; justify-content: center; }
+        .modal-content-panel h3 { font-size: clamp(1.5rem, 3vw, 2.2rem); margin-bottom: 15px; font-weight: 300; }
         .modal-content-panel p { color: var(--text-muted); margin-bottom: 30px; font-size: 0.95rem; }
 
         /* --- ARCHITECTURAL FOOTER --- */
         footer {
             background: #2A1B22; /* High contrast dark luxury tone */
             color: #F8ECEF;
-            padding: 120px 40px 60px;
+            padding: clamp(60px, 8vw, 120px) 40px 40px;
             position: relative;
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: 1.5fr 0.8fr 0.8fr 1.4fr;
-            gap: 80px;
+            gap: clamp(40px, 5vw, 80px);
             max-width: 1500px;
-            margin: 0 auto 80px;
+            margin: 0 auto clamp(40px, 5vw, 80px);
         }
 
         .footer-brand-column .brand-logo {
@@ -980,6 +1037,7 @@
             width: 100%;
             margin-bottom: 15px;
             font-size: 0.9rem;
+            border-radius: 0;
         }
 
         .luxury-input-field:focus {
@@ -1009,21 +1067,24 @@
 
         .footer-social-wrapper a:hover { color: var(--primary-pink); }
 
-        /* --- MOBILE LAYOUT & SPACING SYSTEM --- */
+        /* --- MOBILE LAYOUT & REFINED SPACING SYSTEM --- */
         @media (max-width: 1200px) {
-            .footer-grid { grid-template-columns: 1fr 1fr; gap: 60px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
             .about-wrapper, .booking-container, .contact-grid { grid-template-columns: 1fr; gap: 60px; }
             .instagram-staggered { grid-template-columns: repeat(2, 1fr); }
             .instagram-wrapper-block:nth-child(even) { transform: translateY(0); }
-            .hero-content h1 { font-size: 4rem; }
         }
 
         @media (max-width: 768px) {
+            .nav-container { padding: 20px; }
+            header.scrolled .nav-container { padding: 15px 20px; }
+            
             .nav-links {
                 position: fixed;
                 top: 0;
                 left: -100%;
-                width: 85%;
+                width: 280px;
+                max-width: 85vw;
                 height: 100vh;
                 background: white;
                 flex-direction: column;
@@ -1032,17 +1093,38 @@
                 gap: 35px;
                 box-shadow: 30px 0 60px rgba(0,0,0,0.05);
                 transition: var(--transition-fluid);
+                z-index: 1000;
             }
+            
             .nav-links.open { left: 0; }
             .menu-toggle { display: block; }
-            section { padding: 100px 20px; }
-            .hero-content h1 { font-size: 3rem; }
-            .booking-container, .contact-form-card { padding: 40px 20px; }
-            .form-row { grid-template-columns: 1fr; gap: 0; }
-            .cart-drawer { width: 100%; right: -100%; padding: 30px; }
+            section { padding: 60px 20px; }
+            
+            #home {
+                padding: 100px 20px 40px 20px;
+                background: linear-gradient(180deg, rgba(255,249,251,0.96) 60%, rgba(255,249,251,0.8) 100%), url('https://images.unsplash.com/photo-1535141192574-5d4897c13636?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
+                justify-content: center;
+                text-align: center;
+            }
+            .hero-content { text-align: center; }
+            .hero-btns { justify-content: center; }
+            
+            .about-img-box::after { display: none; } /* Simplify layout for flat clean mobile execution */
+            
+            .form-row { grid-template-columns: 1fr; }
             .modal-body-container { grid-template-columns: 1fr; }
-            .modal-img-frame { height: 250px; }
+            .modal-img-frame { height: 250px; min-height: auto; }
+            
+            .contact-form-card { padding: 40px 20px; }
+            
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
             .footer-bottom-bar { flex-direction: column; gap: 20px; text-align: center; }
+            .footer-social-wrapper a { margin: 0 12px; }
+        }
+
+        @media (max-width: 480px) {
+            .instagram-staggered { grid-template-columns: 1fr; }
+            .hero-btns .btn-atelier { width: 100%; }
         }
     </style>
 </head>
@@ -1054,11 +1136,11 @@
         <div class="nav-container">
             <a href="#" class="brand-logo">Rose<span>Cakes</span></a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#collections">Collections</a></li>
-                <li><a href="#about">Our Story</a></li>
-                <li><a href="#booking">Custom Cakes</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+                <li><a href="#collections" onclick="toggleMenu()">Collections</a></li>
+                <li><a href="#about" onclick="toggleMenu()">Our Story</a></li>
+                <li><a href="#booking" onclick="toggleMenu()">Custom Cakes</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
             </ul>
             <div class="nav-icons">
                 <div class="cart-icon-wrapper" onclick="toggleCart()">
@@ -1092,7 +1174,7 @@
         </div>
     </div>
 
-    <div class="luxury-modal" id="quickViewModal">
+    <div class="luxury-modal" id="quickViewModal" onclick="if(event.target === this) closeQuickView()">
         <div class="modal-body-container">
             <div class="modal-close" onclick="closeQuickView()"><i class="fa-solid fa-xmark"></i></div>
             <div class="modal-img-frame">
@@ -1136,8 +1218,10 @@
                     </div>
                 </div>
                 <div class="product-info">
-                    <p class="product-category">Wedding Cakes</p>
-                    <h3>Le Grand Rose Cake</h3>
+                    <div>
+                        <p class="product-category">Wedding Cakes</p>
+                        <h3>Le Grand Rose Cake</h3>
+                    </div>
                     <p class="price">R450.00</p>
                 </div>
             </div>
@@ -1152,8 +1236,10 @@
                     </div>
                 </div>
                 <div class="product-info">
-                    <p class="product-category">Birthday Cakes</p>
-                    <h3>Champagne Shimmer</h3>
+                    <div>
+                        <p class="product-category">Birthday Cakes</p>
+                        <h3>Champagne Shimmer</h3>
+                    </div>
                     <p class="price">R180.00</p>
                 </div>
             </div>
@@ -1167,8 +1253,10 @@
                     </div>
                 </div>
                 <div class="product-info">
-                    <p class="product-category">Luxury Cupcakes</p>
-                    <h3>Golden Velvet Box</h3>
+                    <div>
+                        <p class="product-category">Luxury Cupcakes</p>
+                        <h3>Golden Velvet Box</h3>
+                    </div>
                     <p class="price">R65.00</p>
                 </div>
             </div>
@@ -1213,7 +1301,7 @@
                     <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 15px; font-weight:300; line-height:1.4;">*Final quotes itemize extensive gold architectural metrics, moodboard complexity indexes, and delivery logistics.</p>
                 </div>
             </div>
-            <form id="cake-booking-form" onchange="updateBookingEstimate()" style="margin-top: 10px;">
+            <form id="cake-booking-form" onchange="updateBookingEstimate()" onsubmit="event.preventDefault();" style="margin-top: 10px;">
                 <div class="form-group">
                     <label>Event Classification</label>
                     <select id="booking-event">
@@ -1307,7 +1395,7 @@
         </div>
     </section>
 
-    <section id="contact" class="reveal" style="padding-top: 220px;">
+    <section id="contact" class="reveal">
         <div class="contact-grid">
             <div class="contact-details-panel">
                 <div class="info-block-wrapper">
@@ -1340,13 +1428,13 @@
                 <a href="https://wa.me/1234567890" target="_blank" class="btn-atelier" style="align-self: flex-start; margin-bottom: 40px;"><i class="fa-brands fa-whatsapp" style="margin-right: 10px;"></i> Institutional WhatsApp Channels</a>
                 
                 <div class="map-wrapper-frame">
-                    <iframe src="https://maps.google.com/maps?q=luxury%20district&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://maps.google.com/maps?q=742%20Champagne%20Boulevard,%20Luxury%20District&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
             <div class="contact-form-card" style="background: white; border: 1px solid var(--border-light); padding: 60px;">
                 <span class="section-label" style="margin-bottom: 5px;">Digital Intake Node</span>
                 <h3 style="font-size: 2.2rem; font-weight:300; margin-bottom: 40px;">Send An <strong>Inquiry portfolio</strong></h3>
-                <form action="#">
+                <form action="#" onsubmit="event.preventDefault();">
                     <div class="form-group">
                         <label>Your Legal Name</label>
                         <input type="text" required>
@@ -1393,7 +1481,7 @@
                 <h4>Join The Atelier List</h4>
                 <p>Receive private collection previews, luxury flavor releases, and priority booking invitations.</p>
                 <form class="newsletter-form-container" onsubmit="event.preventDefault();">
-                    <input type="email" placeholder="Your Luxury Email Address" class="luxury-input-field">
+                    <input type="email" placeholder="Your Luxury Email Address" class="luxury-input-field" required>
                     <button type="submit" class="btn-atelier btn-atelier-filled" style="width: 100%; border: none;">Subscribe To Private Portfolio</button>
                 </form>
             </div>
@@ -1421,7 +1509,9 @@
 
         // --- MOBILE MENU CONTROLLER ---
         function toggleMenu() {
-            document.querySelector('.nav-links').classList.toggle('open');
+            if (window.innerWidth <= 768) {
+                document.querySelector('.nav-links').classList.toggle('open');
+            }
         }
 
         // --- SHOPPING CART STATE MANAGEMENT ---
@@ -1466,7 +1556,7 @@
                         <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=100&q=80" alt="Item Frame">
                         <div class="cart-item-meta">
                             <h4>${item.name}</h4>
-                            <p>${item.qty} &times; R${item.price}.00</p>
+                            <p>${item.qty} × R${item.price}.00</p>
                         </div>
                     </div>
                 `;
@@ -1491,11 +1581,13 @@
         const slides = document.querySelectorAll('.testimonial-card');
         let currentSlide = 0;
 
-        setInterval(() => {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }, 6000);
+        if(slides.length > 0) {
+            setInterval(() => {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }, 6000);
+        }
 
         // --- LUXURY QUICK VIEW CONTEXT SCHEMATIC ---
         function openQuickView(name, price, imgUrl, category) {
@@ -1504,7 +1596,6 @@
             document.getElementById('modal-img').src = imgUrl;
             document.getElementById('modal-label').innerText = category;
             
-            // Re-bind exact functional variables directly inside implementation context
             document.getElementById('modal-add-btn').onclick = function() {
                 addToCart(name, price);
                 closeQuickView();
@@ -1524,7 +1615,7 @@
             for (let i = 0; i < revealElements.length; i++) {
                 let windowHeight = window.innerHeight;
                 let elementTop = revealElements[i].getBoundingClientRect().top;
-                let elementVisible = 120;
+                let elementVisible = 80; // Decreased slight margins for mobile structural efficiency
 
                 if (elementTop < windowHeight - elementVisible) {
                     revealElements[i].classList.add('active');
