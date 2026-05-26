@@ -1,26 +1,41 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rose Cakes | Luxury Premium Bakery & Custom Cakes</title>
+    <title>Rose Cakes | Luxury Premium Bakery & Bespoke Cake Atelier</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --blush: #F7E7E5;
-            --blush-deep: #E8C5C1;
-            --ivory: #FFFDFB;
-            --gold: #D4AF37;
-            --gold-light: #F3E5AB;
-            --beige: #F5EFE6;
-            --charcoal: #2C2625;
-            --text-gray: #6B5E5C;
-            --glass: rgba(255, 253, 251, 0.75);
-            --transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            /* Exact original pink palette preserved */
+            --primary-pink: #F79AC3;
+            --primary-pink-hover: #F48FB1;
+            --soft-pink-accent: #FBCFE8;
+            --soft-pink-light: #F9A8D4;
+            --creamy-white: #FFF9FB;
+            
+            /* Premium design tokens added for editorial refinement */
+            --luxury-dark: #2A1B22;
+            --text-main: #4A353E;
+            --text-muted: #8A717C;
+            --border-light: rgba(247, 154, 195, 0.15);
+            --border-heavy: rgba(247, 154, 195, 0.3);
+            
+            /* High-end Ultra-clean Glassmorphism */
+            --glass-nav: rgba(255, 249, 251, 0.75);
+            --glass-card: rgba(255, 255, 255, 0.65);
+            --glass-drawer: rgba(255, 249, 251, 0.85);
+            
+            /* Sophisticated structural elements */
+            --transition-fluid: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-fast: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            --radius-editorial: 0px; /* Zeroed for an elite, high-fashion editorial look */
+            --radius-soft: 8px;       /* Slightly softened for interactive elements */
         }
 
         * {
@@ -28,112 +43,126 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
+            letter-spacing: -0.01em;
         }
 
         html {
             scroll-behavior: smooth;
+            background-color: var(--creamy-white);
         }
 
         body {
-            background-color: var(--ivory);
-            color: var(--charcoal);
+            background-color: var(--creamy-white);
+            color: var(--text-main);
             overflow-x: hidden;
-            line-height: 1.6;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
         }
 
-        h1, h2, h3, h4, .brand-logo {
-            font-family: 'Playfair Display', serif;
-            font-weight: 500;
-            letter-spacing: 1px;
+        h1, h2, h3, h4, h5, .brand-logo {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            color: var(--luxury-dark);
+            letter-spacing: -0.03em;
         }
 
-        /* --- REUSABLE COMPONENTS --- */
-        .btn-luxury {
-            display: inline-block;
-            padding: 14px 32px;
-            border: 1px solid var(--charcoal);
-            background: transparent;
-            color: var(--charcoal);
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: var(--transition);
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .btn-luxury::before {
-            content: '';
+        /* --- SKEW / BLUR AMBIENT DECORATIONS --- */
+        .ambient-glow {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            background-color: var(--charcoal);
-            transition: var(--transition);
-            z-index: -1;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(251,207,232,0.35) 0%, rgba(255,249,251,0) 70%);
+            top: -200px;
+            right: -100px;
+            z-index: 0;
+            pointer-events: none;
+            filter: blur(40px);
         }
 
-        .btn-luxury:hover {
-            color: var(--ivory);
+        /* --- TYPOGRAPHY PATTERNS --- */
+        .section-label {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.35em;
+            color: var(--primary-pink);
+            margin-bottom: 12px;
+            display: block;
         }
 
-        .btn-luxury:hover::before {
-            width: 100%;
-        }
-
-        .btn-gold {
-            border-color: var(--gold);
-            color: var(--charcoal);
-            background: linear-gradient(135deg, var(--ivory), var(--beige));
-        }
-        .btn-gold::before {
-            background-color: var(--gold);
-        }
-        .btn-gold:hover {
-            color: var(--ivory);
-        }
-
-        .section-title {
-            text-align: center;
+        .section-heading {
+            font-size: 3.25rem;
+            line-height: 1.15;
+            font-weight: 300;
+            color: var(--luxury-dark);
             margin-bottom: 60px;
         }
 
-        .section-title span {
-            font-family: 'Playfair Display', serif;
+        .section-heading strong {
+            font-weight: 500;
             font-style: italic;
-            color: var(--gold);
-            display: block;
-            font-size: 1.2rem;
-            margin-bottom: 8px;
         }
 
-        .section-title h2 {
-            font-size: 2.8rem;
+        /* --- LUXURY INTERACTIVE ELEMENTS --- */
+        .btn-atelier {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 42px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            border: 1px solid var(--luxury-dark);
+            background: transparent;
+            color: var(--luxury-dark);
+            text-decoration: none;
             position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
+            cursor: pointer;
+            transition: var(--transition-fluid);
+            overflow: hidden;
         }
 
-        .section-title h2::after {
-            content: '♦';
+        .btn-atelier::before {
+            content: '';
             position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--gold);
-            font-size: 0.8rem;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--luxury-dark);
+            transition: var(--transition-fluid);
+            z-index: -1;
         }
 
-        /* Reveal on Scroll class */
+        .btn-atelier:hover {
+            color: white;
+        }
+
+        .btn-atelier:hover::before {
+            left: 0;
+        }
+
+        .btn-atelier-filled {
+            background: var(--luxury-dark);
+            color: white;
+        }
+
+        .btn-atelier-filled::before {
+            background: white;
+        }
+
+        .btn-atelier-filled:hover {
+            color: var(--luxury-dark);
+            border-color: var(--luxury-dark);
+        }
+
+        /* --- SCROLL ANIMATIONS CONTROLLER --- */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
-            transition: all 1s ease;
+            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .reveal.active {
@@ -141,741 +170,885 @@
             transform: translateY(0);
         }
 
-        /* --- FLOATING DECORATIONS --- */
-        .petal-bg {
-            position: absolute;
-            pointer-events: none;
-            opacity: 0.15;
-            animation: float 8s ease-in-out infinite;
-            z-index: 0;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(10deg); }
-        }
-
-        /* --- NAVIGATION BAR --- */
+        /* --- ATELIER HEADER --- */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            transition: var(--transition);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            background: transparent;
+            border-bottom: 1px solid transparent;
+            transition: var(--transition-fluid);
         }
 
         header.scrolled {
-            background: var(--glass);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 10px 0;
+            background: var(--glass-nav);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-bottom: 1px solid var(--border-light);
+            padding: 5px 0;
         }
 
         .nav-container {
-            max-width: 1400px;
+            max-width: 1500px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
+            padding: 26px 40px;
         }
 
         .brand-logo {
             font-size: 2rem;
-            color: var(--charcoal);
+            font-weight: 500;
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            color: var(--luxury-dark);
+            letter-spacing: -0.04em;
         }
 
         .brand-logo span {
-            color: var(--gold);
+            font-weight: 300;
+            color: var(--primary-pink);
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 35px;
+            gap: 50px;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--charcoal);
-            font-size: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 400;
-            transition: var(--transition);
+            letter-spacing: 0.2em;
+            font-weight: 500;
+            transition: var(--transition-fast);
             position: relative;
+            padding: 8px 0;
         }
 
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: 0;
             left: 0;
             width: 0;
             height: 1px;
-            background-color: var(--gold);
-            transition: var(--transition);
+            background: var(--primary-pink);
+            transition: var(--transition-fast);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-pink);
         }
 
         .nav-links a:hover::after {
             width: 100%;
         }
 
-        .nav-links a:hover {
-            color: var(--gold);
-        }
-
         .nav-icons {
             display: flex;
-            gap: 25px;
-            font-size: 1.2rem;
+            gap: 30px;
+            align-items: center;
+            font-size: 1.1rem;
         }
 
         .nav-icons a, .cart-icon-wrapper {
-            color: var(--charcoal);
+            color: var(--luxury-dark);
             text-decoration: none;
             cursor: pointer;
-            transition: var(--transition);
+            transition: var(--transition-fast);
             position: relative;
         }
 
-        .nav-icons a:hover, .cart-icon-wrapper:hover {
-            color: var(--gold);
-            transform: scale(1.05);
+        .cart-icon-wrapper:hover {
+            color: var(--primary-pink);
         }
 
         .cart-count {
             position: absolute;
             top: -8px;
             right: -12px;
-            background-color: var(--gold);
+            background: var(--luxury-dark);
             color: white;
             font-size: 0.65rem;
-            padding: 2px 6px;
+            font-weight: 600;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
-            font-family: 'Poppins', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .menu-toggle {
             display: none;
-            font-size: 1.5rem;
             cursor: pointer;
+            font-size: 1.2rem;
         }
 
-        /* --- HERO SECTION --- */
+        /* --- CINEMATIC HERO --- */
         #home {
             height: 100vh;
-            position: relative;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--charcoal);
-            padding: 0 20px;
-            background: linear-gradient(rgba(255,253,251,0.65), rgba(247,231,229,0.5)), url('https://images.unsplash.com/photo-1535141192574-5d4897c13636?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            background-attachment: fixed;
+            justify-content: flex-start;
+            padding: 0 10%;
+            position: relative;
+            background: linear-gradient(90deg, rgba(255,249,251,0.92) 30%, rgba(255,249,251,0.4) 100%), url('https://images.unsplash.com/photo-1535141192574-5d4897c13636?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            overflow: hidden;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 750px;
             z-index: 2;
+            text-align: left;
         }
 
         .hero-content h1 {
-            font-size: 4.5rem;
-            line-height: 1.2;
-            margin-bottom: 25px;
-            animation: fadeInDown 1.5s ease;
+            font-size: 5.5rem;
+            line-height: 1.05;
+            font-weight: 300;
+            color: var(--luxury-dark);
+            margin-bottom: 30px;
+        }
+
+        .hero-content h1 strong {
+            font-weight: 500;
+            font-style: italic;
+            color: var(--primary-pink);
         }
 
         .hero-content p {
             font-size: 1.1rem;
-            letter-spacing: 1px;
-            margin-bottom: 40px;
-            color: var(--text-gray);
-            animation: fadeInUp 1.5s ease;
+            color: var(--text-muted);
+            margin-bottom: 45px;
+            max-width: 580px;
+            font-weight: 300;
         }
 
         .hero-btns {
             display: flex;
-            justify-content: center;
             gap: 20px;
-            animation: fadeInUp 1.8s ease;
         }
 
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* --- FEATURED COLLECTIONS & BEST SELLERS --- */
+        /* --- EDITORIAL SECTIONS --- */
         section {
-            padding: 100px 40px;
-            max-width: 1400px;
+            padding: 160px 40px;
+            max-width: 1500px;
             margin: 0 auto;
             position: relative;
+            z-index: 1;
         }
 
         .grid-layout {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 50px;
         }
 
+        /* --- HIGH-END PRODUCT ARCHITECTURE --- */
         .product-card {
-            background: var(--ivory);
-            border: 1px solid rgba(44, 38, 37, 0.05);
-            border-radius: 4px;
-            overflow: hidden;
+            background: var(--glass-card);
+            border: 1px solid var(--border-light);
+            transition: var(--transition-fluid);
             position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-            transition: var(--transition);
         }
 
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.1);
-            border-color: rgba(212, 175, 55, 0.3);
+            transform: translateY(-8px);
+            border-color: var(--border-heavy);
+            box-shadow: 0 30px 60px rgba(74,53,62,0.04);
         }
 
         .img-container {
-            height: 380px;
+            height: 480px;
             overflow: hidden;
             position: relative;
-            background-color: var(--beige);
+            background-color: var(--soft-beige);
         }
 
         .img-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+            transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .product-card:hover .img-container img {
-            transform: scale(1.08);
+            transform: scale(1.05);
         }
 
         .badge {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            background: var(--gold);
-            color: white;
-            padding: 4px 12px;
-            font-size: 0.75rem;
+            top: 25px;
+            left: 25px;
+            background: white;
+            color: var(--luxury-dark);
+            border: 1px solid var(--luxury-dark);
+            padding: 6px 14px;
+            font-size: 0.65rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 500;
+            letter-spacing: 0.2em;
+            font-weight: 600;
             z-index: 2;
         }
 
-        .product-actions {
+        .product-actions-overlay {
             position: absolute;
-            bottom: -50px;
+            top: 0;
             left: 0;
             width: 100%;
+            height: 100%;
+            background: rgba(42, 27, 34, 0.2);
+            backdrop-filter: blur(4px);
             display: flex;
+            align-items: center;
             justify-content: center;
             gap: 15px;
-            background: rgba(255, 253, 251, 0.9);
-            padding: 15px;
-            transition: var(--transition);
-            backdrop-filter: blur(5px);
+            opacity: 0;
+            transition: var(--transition-fluid);
+            z-index: 3;
         }
 
-        .product-card:hover .product-actions {
-            bottom: 0;
+        .product-card:hover .product-actions-overlay {
+            opacity: 1;
         }
 
-        .action-btn {
-            background: var(--charcoal);
-            color: var(--ivory);
+        .action-circle-btn {
+            background: white;
+            color: var(--luxury-dark);
             border: none;
-            width: 40px;
-            height: 40px;
+            width: 54px;
+            height: 54px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: var(--transition);
+            transition: var(--transition-fluid);
+            font-size: 1rem;
         }
 
-        .action-btn:hover {
-            background: var(--gold);
+        .action-circle-btn:hover {
+            background: var(--luxury-dark);
             color: white;
+            transform: scale(1.1);
         }
 
         .product-info {
-            padding: 25px;
-            text-align: center;
+            padding: 35px 25px;
+            text-align: left;
+            position: relative;
         }
 
         .product-category {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--gold);
-            margin-bottom: 8px;
+            letter-spacing: 0.25em;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            font-weight: 600;
         }
 
         .product-info h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
-
-        .rating {
-            color: var(--gold);
-            font-size: 0.8rem;
-            margin-bottom: 12px;
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 15px;
         }
 
         .price {
             font-size: 1.2rem;
             font-weight: 500;
-            color: var(--charcoal);
+            color: var(--luxury-dark);
         }
 
-        /* --- ABOUT SECTION --- */
+        /* --- THE ATELIER STORY --- */
         .about-wrapper {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 100px;
             align-items: center;
-            gap: 80px;
-        }
-
-        .about-img, .about-text {
-            flex: 1;
         }
 
         .about-img-box {
             position: relative;
-            padding: 20px;
         }
 
         .about-img-box img {
             width: 100%;
-            max-height: 600px;
+            height: 650px;
             object-fit: cover;
-            border-radius: 4px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
         }
 
-        .about-img-box::before {
+        .about-img-box::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 80%;
-            height: 90%;
-            border: 1px solid var(--gold);
+            top: 30px;
+            left: -30px;
+            width: 100%;
+            height: 100%;
+            border: 1px solid var(--primary-pink);
             z-index: -1;
-            transform: translate(-15px, -15px);
-        }
-
-        .about-text h3 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
+            transition: var(--transition-fluid);
         }
 
         .about-text p {
-            color: var(--text-gray);
-            margin-bottom: 30px;
+            color: var(--text-muted);
             font-size: 1.05rem;
+            margin-bottom: 30px;
+            font-weight: 300;
         }
 
         .about-features {
+            margin-top: 50px;
+            border-top: 1px solid var(--border-light);
+            padding-top: 40px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 30px;
         }
 
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .feature-item i {
-            font-size: 1.5rem;
-            color: var(--gold);
-        }
-
-        /* --- CUSTOM BOOKING CONCIERGE --- */
-        #booking {
-            background-color: var(--beige);
-            max-width: 100%;
-        }
-
-        .booking-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: var(--ivory);
-            padding: 60px;
-            border-radius: 8px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.03);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-
-        .booking-info h3 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-        }
-
-        .booking-info p {
-            color: var(--text-gray);
-            margin-bottom: 40px;
-        }
-
-        .live-pricing-card {
-            background: var(--blush);
-            padding: 30px;
-            border-radius: 4px;
-            border-left: 4px solid var(--gold);
-        }
-
-        .live-pricing-card h4 {
-            font-size: 1.2rem;
+        .feature-block h4 {
+            font-size: 1.1rem;
+            font-weight: 500;
             margin-bottom: 10px;
         }
 
+        .feature-block p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* --- LUXURY CONCIERGE EXPERIENCE --- */
+        #booking {
+            background: linear-gradient(180deg, var(--creamy-white) 0%, #FFF3F7 50%, var(--creamy-white) 100%);
+        }
+
+        .booking-container {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 100px;
+            background: white;
+            border: 1px solid var(--border-light);
+            padding: 80px;
+        }
+
+        .live-pricing-panel {
+            background: var(--creamy-white);
+            border: 1px dashed var(--border-heavy);
+            padding: 45px;
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .live-pricing-panel h4 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .live-pricing-panel .price-display {
+            font-size: 3.5rem;
+            color: var(--luxury-dark);
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            text-align: left;
         }
 
         .form-group label {
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            font-weight: 500;
+            letter-spacing: 0.2em;
+            margin-bottom: 12px;
+            color: var(--luxury-dark);
+            font-weight: 600;
         }
 
         .form-group input, .form-group select, .form-group textarea {
             width: 100%;
-            padding: 14px;
-            border: 1px solid rgba(44, 38, 37, 0.15);
-            background: var(--ivory);
-            font-size: 1rem;
-            color: var(--charcoal);
-            transition: var(--transition);
+            padding: 18px;
+            border: 1px solid var(--border-light);
+            background: var(--creamy-white);
+            font-size: 0.9rem;
+            color: var(--luxury-dark);
+            transition: var(--transition-fast);
         }
 
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
             outline: none;
-            border-color: var(--gold);
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
+            border-color: var(--luxury-dark);
+            background: white;
         }
 
-        /* --- TESTIMONIALS --- */
-        .testimonial-slider {
-            max-width: 900px;
+        /* --- FINE TESTIMONIAL SUITE --- */
+        .testimonial-container {
+            max-width: 1000px;
             margin: 0 auto;
             position: relative;
-            overflow: hidden;
-            height: 350px;
+            min-height: 320px;
         }
 
-        .testimonial-slide {
+        .testimonial-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            padding: 60px;
+            text-align: center;
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
             opacity: 0;
-            transition: opacity 1s ease-in-out;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            justify-content: center;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .testimonial-slide.active {
+        .testimonial-card.active {
             opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
             position: relative;
         }
 
-        .client-img {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border: 2px solid var(--gold);
-        }
-
-        .testimonial-slide p {
-            font-family: 'Playfair Display', serif;
+        .testimonial-card p {
             font-size: 1.5rem;
             font-style: italic;
-            color: var(--charcoal);
-            margin-bottom: 20px;
-            max-width: 750px;
+            font-weight: 300;
+            color: var(--luxury-dark);
+            line-height: 1.7;
+            margin-bottom: 35px;
         }
 
-        .client-name {
-            font-weight: 600;
-            text-transform: uppercase;
+        .client-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .client-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--border-heavy);
+        }
+
+        .client-info h5 {
             font-size: 0.85rem;
-            letter-spacing: 2px;
-            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 600;
         }
 
-        /* --- ATELIER INSTAGRAM GALLERY --- */
-        .instagram-grid {
+        /* --- STAGGERED EDITORIAL GALLERY --- */
+        .instagram-staggered {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
+            gap: 25px;
         }
 
-        .instagram-item {
+        .instagram-wrapper-block {
             position: relative;
-            height: 300px;
             overflow: hidden;
+            height: 400px;
         }
 
-        .instagram-item img {
+        .instagram-wrapper-block:nth-child(even) {
+            transform: translateY(30px);
+        }
+
+        .instagram-wrapper-block img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transition);
+            transition: var(--transition-fluid);
         }
 
-        .instagram-overlay {
+        .instagram-luxury-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(44, 38, 37, 0.6);
+            background: rgba(42, 27, 34, 0.4);
+            backdrop-filter: blur(4px);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 1.5rem;
             opacity: 0;
-            transition: var(--transition);
+            transition: var(--transition-fluid);
         }
 
-        .instagram-item:hover .instagram-overlay { opacity: 1; }
-        .instagram-item:hover img { transform: scale(1.1); }
+        .instagram-wrapper-block:hover .instagram-luxury-overlay { opacity: 1; }
+        .instagram-wrapper-block:hover img { transform: scale(1.08); }
 
-        /* --- CONTACT & ATELIER INFO --- */
-        .contact-layout {
+        /* --- MODERN CONTACT CONCIERGE --- */
+        .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 100px;
         }
 
-        .info-panel i {
-            color: var(--gold);
-            margin-right: 15px;
-            width: 20px;
+        .contact-details-panel {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .info-panel p {
-            margin-bottom: 20px;
+        .info-block-wrapper {
+            margin-bottom: 40px;
         }
 
-        .map-container {
-            height: 300px;
-            background: #e5e5e5;
-            margin-top: 30px;
-            border-radius: 4px;
-            overflow: hidden;
+        .luxury-info-row {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            gap: 20px;
         }
 
-        /* --- SHOPPING CART DRAWER (Glassmorphism) --- */
+        .luxury-info-row i {
+            color: var(--primary-pink);
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        .luxury-info-row div h5 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+        }
+
+        .luxury-info-row div p {
+            font-size: 1.05rem;
+            color: var(--luxury-dark);
+            font-weight: 300;
+        }
+
+        .map-wrapper-frame {
+            height: 350px;
+            border: 1px solid var(--border-light);
+            filter: grayscale(1) contrast(1.1) invert(0);
+            transition: var(--transition-fluid);
+        }
+
+        .map-wrapper-frame:hover {
+            filter: grayscale(0.2) contrast(1.0);
+        }
+
+        /* --- REFINED ATELIER BAG (DRAWER) --- */
         .cart-drawer {
             position: fixed;
             top: 0;
-            right: -450px;
-            width: 420px;
+            right: -500px;
+            width: 480px;
             height: 100vh;
-            background: rgba(255, 253, 251, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            box-shadow: -10px 0 40px rgba(0,0,0,0.05);
+            background: var(--glass-drawer);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
             z-index: 2000;
-            transition: var(--transition);
-            padding: 40px;
+            transition: var(--transition-fluid);
+            padding: 50px;
             display: flex;
             flex-direction: column;
+            border-left: 1px solid var(--border-light);
         }
 
         .cart-drawer.open {
             right: 0;
         }
 
-        .cart-header {
+        .cart-drawer-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border-light);
             margin-bottom: 40px;
-            border-bottom: 1px solid rgba(44, 38, 37, 0.1);
-            padding-bottom: 20px;
         }
 
-        .close-cart {
-            font-size: 1.5rem;
+        .cart-drawer-header h3 {
+            font-size: 1.8rem;
+            font-weight: 300;
+        }
+
+        .cart-close-trigger {
             cursor: pointer;
-            transition: var(--transition);
+            font-size: 1.2rem;
+            transition: var(--transition-fast);
         }
 
-        .close-cart:hover { color: var(--gold); }
+        .cart-close-trigger:hover { color: var(--primary-pink); }
 
-        .cart-items {
+        .cart-scroll-node {
             flex: 1;
             overflow-y: auto;
         }
 
-        .cart-item {
+        .editorial-cart-item {
             display: flex;
-            gap: 20px;
+            gap: 25px;
+            padding-bottom: 25px;
             margin-bottom: 25px;
+            border-bottom: 1px solid rgba(247, 154, 195, 0.08);
             align-items: center;
         }
 
-        .cart-item img {
-            width: 70px;
-            height: 70px;
+        .editorial-cart-item img {
+            width: 90px;
+            height: 90px;
             object-fit: cover;
-            border-radius: 4px;
         }
 
-        .cart-item-details h4 { font-size: 1rem; }
-        .cart-item-details p { color: var(--gold); font-size: 0.9rem;}
+        .cart-item-meta h4 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
 
-        .cart-footer {
-            border-top: 1px solid rgba(44, 38, 37, 0.1);
+        .cart-item-meta p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .cart-drawer-footer {
+            border-top: 1px solid var(--border-light);
             padding-top: 30px;
         }
 
-        .cart-total {
+        .cart-summary-line {
             display: flex;
             justify-content: space-between;
-            font-size: 1.2rem;
-            font-weight: 500;
-            margin-bottom: 20px;
+            font-size: 1.25rem;
+            margin-bottom: 30px;
         }
 
-        /* --- FOOTER --- */
+        /* --- MODERN LUXURY QUICK VIEW MODAL --- */
+        .luxury-modal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(42, 27, 34, 0.5);
+            backdrop-filter: blur(8px);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-fluid);
+        }
+
+        .luxury-modal.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-body-container {
+            background: white;
+            width: 900px;
+            max-width: 95%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            position: relative;
+            border: 1px solid var(--border-light);
+            transform: translateY(30px);
+            transition: var(--transition-fluid);
+        }
+
+        .luxury-modal.open .modal-body-container {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 25px; right: 25px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: var(--transition-fast);
+        }
+
+        .modal-close:hover { color: var(--primary-pink); }
+
+        .modal-img-frame { height: 500px; background: var(--soft-beige); }
+        .modal-img-frame img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .modal-content-panel { padding: 50px; display: flex; flex-direction: column; justify-content: center; }
+        .modal-content-panel h3 { font-size: 2.2rem; margin-bottom: 15px; font-weight: 300; }
+        .modal-content-panel p { color: var(--text-muted); margin-bottom: 30px; font-size: 0.95rem; }
+
+        /* --- ARCHITECTURAL FOOTER --- */
         footer {
-            background-color: var(--charcoal);
-            color: var(--ivory);
-            padding: 80px 40px 30px;
+            background: #2A1B22; /* High contrast dark luxury tone */
+            color: #F8ECEF;
+            padding: 120px 40px 60px;
+            position: relative;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 2fr;
-            gap: 40px;
-            max-width: 1400px;
-            margin: 0 auto 60px;
+            grid-template-columns: 1.5fr 0.8fr 0.8fr 1.4fr;
+            gap: 80px;
+            max-width: 1500px;
+            margin: 0 auto 80px;
         }
 
-        .footer-col h4 {
-            color: var(--gold);
-            font-size: 1.2rem;
+        .footer-brand-column .brand-logo {
+            color: white;
             margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            display: inline-block;
         }
 
-        .footer-col ul {
+        .footer-brand-column p {
+            color: #C3B4BA;
+            font-size: 0.95rem;
+            font-weight: 300;
+            max-width: 320px;
+        }
+
+        .footer-nav-column h4 {
+            color: white;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .footer-nav-column ul {
             list-style: none;
         }
 
-        .footer-col ul li {
-            margin-bottom: 12px;
+        .footer-nav-column ul li {
+            margin-bottom: 16px;
         }
 
-        .footer-col ul li a {
-            color: rgba(255,253,251,0.7);
+        .footer-nav-column ul li a {
+            color: #C3B4BA;
             text-decoration: none;
-            transition: var(--transition);
+            font-size: 0.9rem;
+            transition: var(--transition-fast);
+            font-weight: 300;
         }
 
-        .footer-col ul li a:hover {
-            color: var(--gold);
+        .footer-nav-column ul li a:hover {
+            color: var(--primary-pink);
             padding-left: 5px;
         }
 
-        .newsletter-form input {
-            padding: 14px;
-            border: 1px solid rgba(255,253,251,0.2);
-            background: transparent;
+        .footer-newsletter-column h4 {
+            color: white;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-newsletter-column p {
+            color: #C3B4BA;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        .luxury-input-field {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(247, 154, 195, 0.2);
+            padding: 18px;
             color: white;
             width: 100%;
             margin-bottom: 15px;
+            font-size: 0.9rem;
         }
 
-        .footer-bottom {
-            max-width: 1400px;
+        .luxury-input-field:focus {
+            outline: none;
+            border-color: var(--primary-pink);
+        }
+
+        .footer-bottom-bar {
+            max-width: 1500px;
             margin: 0 auto;
-            border-top: 1px solid rgba(255,253,251,0.1);
-            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 40px;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             font-size: 0.85rem;
-            color: rgba(255,253,251,0.5);
+            color: #A6959C;
+            font-weight: 300;
         }
 
-        .footer-socials a {
+        .footer-social-wrapper a {
             color: white;
-            margin-left: 20px;
+            margin-left: 25px;
             font-size: 1.1rem;
-            transition: var(--transition);
+            transition: var(--transition-fast);
         }
 
-        .footer-socials a:hover { color: var(--gold); }
+        .footer-social-wrapper a:hover { color: var(--primary-pink); }
 
-        /* --- RESPONSIVE STYLING --- */
-        @media (max-width: 1024px) {
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-            .about-wrapper, .booking-container, .contact-layout { grid-template-columns: 1fr; gap: 40px;}
-            .instagram-grid { grid-template-columns: repeat(2, 1fr); }
-            .hero-content h1 { font-size: 3.2rem; }
+        /* --- MOBILE LAYOUT & SPACING SYSTEM --- */
+        @media (max-width: 1200px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 60px; }
+            .about-wrapper, .booking-container, .contact-grid { grid-template-columns: 1fr; gap: 60px; }
+            .instagram-staggered { grid-template-columns: repeat(2, 1fr); }
+            .instagram-wrapper-block:nth-child(even) { transform: translateY(0); }
+            .hero-content h1 { font-size: 4rem; }
         }
 
         @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
-                top: 80px;
+                top: 0;
                 left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background: var(--ivory);
+                width: 85%;
+                height: 100vh;
+                background: white;
                 flex-direction: column;
-                align-items: center;
-                padding-top: 60px;
-                transition: var(--transition);
+                align-items: flex-start;
+                padding: 100px 40px;
+                gap: 35px;
+                box-shadow: 30px 0 60px rgba(0,0,0,0.05);
+                transition: var(--transition-fluid);
             }
             .nav-links.open { left: 0; }
             .menu-toggle { display: block; }
-            section { padding: 60px 20px; }
-            .hero-content h1 { font-size: 2.5rem; }
-            .booking-container { padding: 30px; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
-            .cart-drawer { width: 100%; right: -100%; }
+            section { padding: 100px 20px; }
+            .hero-content h1 { font-size: 3rem; }
+            .booking-container, .contact-form-card { padding: 40px 20px; }
+            .form-row { grid-template-columns: 1fr; gap: 0; }
+            .cart-drawer { width: 100%; right: -100%; padding: 30px; }
+            .modal-body-container { grid-template-columns: 1fr; }
+            .modal-img-frame { height: 250px; }
+            .footer-bottom-bar { flex-direction: column; gap: 20px; text-align: center; }
         }
     </style>
 </head>
 <body>
+
+    <div class="ambient-glow"></div>
 
     <header id="navbar">
         <div class="nav-container">
@@ -888,72 +1061,83 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-icons">
-                <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
                 <div class="cart-icon-wrapper" onclick="toggleCart()">
-                    <i class="fa-solid fa-bag-shopping"></i>
+                    <i class="fa-solid fa-square-minus" style="transform: rotate(90deg); font-size: 1.2rem;"></i>
                     <span class="cart-count" id="cart-count">0</span>
                 </div>
-                <div class="menu-toggle" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
+                <div class="menu-toggle" onclick="toggleMenu()"><i class="fa-solid fa-bars-staggered"></i></div>
             </div>
         </div>
     </header>
 
     <div class="cart-drawer" id="cartDrawer">
-        <div class="cart-header">
+        <div class="cart-drawer-header">
             <h3>Your Atelier Bag</h3>
-            <div class="close-cart" onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></div>
+            <div class="cart-close-trigger" onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></div>
         </div>
-        <div class="cart-items" id="cartItems">
-            <p style="text-align: center; color: var(--text-gray); margin-top: 40px;">Your bag is currently empty.</p>
+        <div class="cart-scroll-node" id="cartItems">
+            <p style="text-align: center; color: var(--text-muted); margin-top: 60px; font-weight: 300;">Your curation portfolio is currently empty.</p>
         </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Subtotal:</span>
+        <div class="cart-drawer-footer">
+            <div class="cart-summary-line">
+                <span>Subtotal</span>
                 <span id="cart-subtotal">R0.00</span>
             </div>
-            <div class="form-group" style="margin-bottom: 15px;">
-                <input type="text" placeholder="Promo Code" style="padding: 10px;">
-            </div>
-            <button class="btn-luxury btn-gold" style="width: 100%;">Proceed to Checkout</button>
-            <div style="text-align: center; margin-top: 15px; font-size: 1.2rem; color: var(--text-gray);">
+            <button class="btn-atelier btn-atelier-filled" style="width: 100%;">Proceed to Secure Checkout</button>
+            <div style="text-align: center; margin-top: 25px; font-size: 1.3rem; color: var(--text-muted); display: flex; justify-content: center; gap: 20px; opacity: 0.5;">
                 <i class="fa-brands fa-cc-visa"></i>
                 <i class="fa-brands fa-cc-mastercard"></i>
-                <i class="fa-brands fa-cc-amex"></i>
                 <i class="fa-brands fa-cc-apple-pay"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="luxury-modal" id="quickViewModal">
+        <div class="modal-body-container">
+            <div class="modal-close" onclick="closeQuickView()"><i class="fa-solid fa-xmark"></i></div>
+            <div class="modal-img-frame">
+                <img id="modal-img" src="" alt="Product Frame">
+            </div>
+            <div class="modal-content-panel">
+                <span class="section-label" id="modal-label">Collection Asset</span>
+                <h3 id="modal-title">Product Name</h3>
+                <p id="modal-price" style="font-size: 1.25rem; color: var(--luxury-dark); margin-bottom: 20px; font-weight: 500;">R0.00</p>
+                <p>Every single masterpiece ordered from our luxury studio includes personal signature refinement elements by our culinary chefs, ensuring elite execution parameters.</p>
+                <button class="btn-atelier btn-atelier-filled" id="modal-add-btn">Add To Atelier Bag</button>
             </div>
         </div>
     </div>
 
     <section id="home">
         <div class="hero-content">
-            <h1>Crafting Sweet Moments with Elegance</h1>
+            <span class="section-label">Bespoke Haute Patisserie</span>
+            <h1>Beautiful Cakes Made for <strong>Celebrations</strong></h1>
             <p>Bespoke luxury cakes designed with artistic perfection and baked fresh with the world's finest premium ingredients.</p>
             <div class="hero-btns">
-                <a href="#collections" class="btn-luxury btn-gold">View Collections</a>
-                <a href="#booking" class="btn-luxury">Custom Request</a>
+                <a href="#collections" class="btn-luxury btn-atelier btn-atelier-filled">View Portfolio</a>
+                <a href="#booking" class="btn-luxury btn-atelier">Private Request</a>
             </div>
         </div>
     </section>
 
     <section id="collections" class="reveal">
-        <div class="section-title">
-            <span>The Rose Collections</span>
-            <h2>Curated Masterpieces</h2>
+        <div style="text-align: center;">
+            <span class="section-label">The Rose Portfolio</span>
+            <h2 class="section-heading">Curated <strong>Masterpieces</strong></h2>
         </div>
         <div class="grid-layout">
             <div class="product-card">
                 <span class="badge">Signature</span>
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1535141192574-5d4897c13636?auto=format&fit=crop&w=600&q=80" alt="Wedding Cake">
-                    <div class="product-actions">
-                        <button class="action-btn" onclick="addToCart('Le Grand Rose Wedding Cake', 450)"><i class="fa-solid fa-bag-shopping"></i></button>
-                        <button class="action-btn"><i class="fa-solid fa-heart"></i></button>
+                    <img src="https://images.unsplash.com/photo-1535141192574-5d4897c13636?auto=format&fit=crop&w=600&q=80" alt="Wedding Cake Portfolio">
+                    <div class="product-actions-overlay">
+                        <button class="action-circle-btn" onclick="addToCart('Le Grand Rose Wedding Cake', 450)"><i class="fa-solid fa-bag-shopping"></i></button>
+                        <button class="action-circle-btn" onclick="openQuickView('Le Grand Rose Wedding Cake', 450, 'https://images.unsplash.com/photo-1535141192574-5d4897c13636?auto=format&fit=crop&w=600&q=80', 'Wedding Architecture')"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
                 <div class="product-info">
                     <p class="product-category">Wedding Cakes</p>
                     <h3>Le Grand Rose Cake</h3>
-                    <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     <p class="price">R450.00</p>
                 </div>
             </div>
@@ -961,32 +1145,30 @@
             <div class="product-card">
                 <span class="badge">Popular</span>
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1562440499-64c9a111f713?auto=format&fit=crop&w=600&q=80" alt="Birthday Cake">
-                    <div class="product-actions">
-                        <button class="action-btn" onclick="addToCart('Champagne Shimmer Birthday Cake', 180)"><i class="fa-solid fa-bag-shopping"></i></button>
-                        <button class="action-btn"><i class="fa-solid fa-heart"></i></button>
+                    <img src="https://images.unsplash.com/photo-1562440499-64c9a111f713?auto=format&fit=crop&w=600&q=80" alt="Birthday Cake Architecture">
+                    <div class="product-actions-overlay">
+                        <button class="action-circle-btn" onclick="addToCart('Champagne Shimmer Birthday Cake', 180)"><i class="fa-solid fa-bag-shopping"></i></button>
+                        <button class="action-circle-btn" onclick="openQuickView('Champagne Shimmer Birthday Cake', 180, 'https://images.unsplash.com/photo-1562440499-64c9a111f713?auto=format&fit=crop&w=600&q=80', 'Gala Collections')"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
                 <div class="product-info">
                     <p class="product-category">Birthday Cakes</p>
                     <h3>Champagne Shimmer</h3>
-                    <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
                     <p class="price">R180.00</p>
                 </div>
             </div>
 
             <div class="product-card">
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=600&q=80" alt="Luxury Cupcakes">
-                    <div class="product-actions">
-                        <button class="action-btn" onclick="addToCart('Golden Velvet Cupcakes (Dozen)', 65)"><i class="fa-solid fa-bag-shopping"></i></button>
-                        <button class="action-btn"><i class="fa-solid fa-heart"></i></button>
+                    <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=600&q=80" alt="Luxury Mignardise">
+                    <div class="product-actions-overlay">
+                        <button class="action-circle-btn" onclick="addToCart('Golden Velvet Cupcakes (Dozen)', 65)"><i class="fa-solid fa-bag-shopping"></i></button>
+                        <button class="action-circle-btn" onclick="openQuickView('Golden Velvet Box', 65, 'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=600&q=80', 'Luxury Mignardise')"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
                 <div class="product-info">
                     <p class="product-category">Luxury Cupcakes</p>
                     <h3>Golden Velvet Box</h3>
-                    <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                     <p class="price">R65.00</p>
                 </div>
             </div>
@@ -995,30 +1177,22 @@
 
     <section id="about" class="reveal">
         <div class="about-wrapper">
-            <div class="about-img">
-                <div class="about-img-box">
-                    <img src="https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?auto=format&fit=crop&w=800&q=80" alt="Cake Artistry">
-                </div>
+            <div class="about-img-box">
+                <img src="https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?auto=format&fit=crop&w=800&q=80" alt="Atelier Interior Work">
             </div>
             <div class="about-text">
-                <div class="section-title" style="text-align: left; margin-bottom: 30px;">
-                    <span>Our Story</span>
-                    <h2 style="font-size: 2.5rem;">Pure Elegance In Every Slice</h2>
-                </div>
-                <p>Founded on the principles of Haute Couture baking, Rose Cakes crafts haute-luxury experiences. Our bespoke designs blend contemporary artistic elegance with time-tested recipes to deliver a breathtaking centerpiece for your milestones.</p>
+                <span class="section-label">Our Manifesto</span>
+                <h2 class="section-heading" style="margin-bottom: 35px;">Pure Elegance In <strong>Every Slice</strong></h2>
+                <p>Welcome to our sweet world. At Rose Cakes, we believe that every grand milestone or intimate gathering deserves a spectacular center of attention. Our handcrafted designs blend beautiful modern elegance with delicious, time-tested recipes to bring warmth and joy to your special day.</p>
                 <p>We source only ultra-premium ingredients: organic Madagascar bourbon vanilla pods, pure Belgian chocolate couvertures, and rich European-style cultured butter.</p>
                 <div class="about-features">
-                    <div class="feature-item">
-                        <i class="fa-solid fa-award"></i>
-                        <div>
-                            <h4>Award Winning Artistry</h4>
-                        </div>
+                    <div class="feature-block">
+                        <h4>Awarded Artistry</h4>
+                        <p>Recognized globally for spatial cake layouts and structural pastry innovations.</p>
                     </div>
-                    <div class="feature-item">
-                        <i class="fa-solid fa-seedling"></i>
-                        <div>
-                            <h4>100% Organic Ingredients</h4>
-                        </div>
+                    <div class="feature-block">
+                        <h4>Organic Lineage</h4>
+                        <p>100% committed to sustainable agricultural sourcing loops for our culinary herbs and dairy products.</p>
                     </div>
                 </div>
             </div>
@@ -1026,21 +1200,20 @@
     </section>
 
     <section id="booking" class="reveal">
-        <div class="section-title">
-            <span>The Bespoke Experience</span>
-            <h2>Custom Concierge Booking</h2>
-        </div>
         <div class="booking-container">
-            <div class="booking-info">
-                <h3>Design Your Dream Cake</h3>
-                <p>Let our master culinary artists bring your ultimate vision to life. Fill out your event specifics and our concierge team will reach out within 24 hours to design your tailored experience.</p>
-                <div class="live-pricing-card">
-                    <h4>Est. Studio Base Price</h4>
-                    <p id="live-price-val" style="font-size: 2rem; color: var(--gold); font-weight:600;">R150.00</p>
-                    <p style="font-size: 0.8rem; margin-top:5px; opacity:0.7;">*Final estimates will include detailed ornamentation and design complexity.</p>
+            <div style="display: flex; flex-direction: column; justify-content: space-between; text-align: left;">
+                <div>
+                    <span class="section-label">The Consultation Studio</span>
+                    <h2 class="section-heading" style="margin-bottom: 30px;">Design Your <strong>Dream Cake</strong></h2>
+                    <p style="color: var(--text-muted); font-weight:300; line-height:1.7;">Let our master culinary artists bring your ultimate vision to life. Fill out your event specifics and our concierge team will reach out within 24 hours to design your tailored experience.</p>
+                </div>
+                <div class="live-pricing-panel">
+                    <h4>Estimated Base Studio Investment</h4>
+                    <p class="price-display" id="live-price-val">R150.00</p>
+                    <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 15px; font-weight:300; line-height:1.4;">*Final quotes itemize extensive gold architectural metrics, moodboard complexity indexes, and delivery logistics.</p>
                 </div>
             </div>
-            <form id="cake-booking-form" onchange="updateBookingEstimate()">
+            <form id="cake-booking-form" onchange="updateBookingEstimate()" style="margin-top: 10px;">
                 <div class="form-group">
                     <label>Event Classification</label>
                     <select id="booking-event">
@@ -1049,112 +1222,144 @@
                         <option value="0">Corporate Affair / Product Launch</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label>Tier Architecture (Size)</label>
-                    <select id="booking-size">
-                        <option value="150">3-Tiers Grand (Serves 75-100)</option>
-                        <option value="100">2-Tiers Opulent (Serves 40-60)</option>
-                        <option value="50">1-Tier Demi (Serves 15-20)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Flavor Profiles</label>
-                    <select id="booking-flavor">
-                        <option value="0">Champagne Infused Raspberry Ganache</option>
-                        <option value="20">Salted Caramel Praline Gold Tart</option>
-                        <option value="10">Madagascar Rich Truffle Noir</option>
-                    </select>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Tier Architecture (Size)</label>
+                        <select id="booking-size">
+                            <option value="150">3-Tiers Grand (Serves 75-100)</option>
+                            <option value="100">2-Tiers Opulent (Serves 40-60)</option>
+                            <option value="50">1-Tier Demi (Serves 15-20)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Flavor Profiles</label>
+                        <select id="booking-flavor">
+                            <option value="0">Champagne Infused Raspberry Ganache</option>
+                            <option value="20">Salted Caramel Praline Gold Tart</option>
+                            <option value="10">Madagascar Rich Truffle Noir</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label>Upload Inspiration Moodboard</label>
-                    <input type="file" style="border: none; padding: 10px 0;">
+                    <input type="file" style="border: 1px dashed var(--border-heavy); background: white;">
                 </div>
                 <div class="form-group">
                     <label>Special Artistic Requests</label>
-                    <textarea rows="3" placeholder="Gold leaf accents, specific floral pairings..."></textarea>
+                    <textarea rows="4" placeholder="Specify if gold leaf accents, custom texture modeling or structured botanical pairings are requested..."></textarea>
                 </div>
-                <button type="submit" class="btn-luxury btn-gold" style="width: 100%;">Submit Luxury Design Request</button>
+                <button type="submit" class="btn-atelier btn-atelier-filled" style="width: 100%; border: none;">Submit Luxury Design Request</button>
             </form>
         </div>
     </section>
 
     <section id="testimonials" class="reveal">
-        <div class="section-title">
-            <span>Kind Words</span>
-            <h2>Client Testimonials</h2>
+        <div style="text-align: center;">
+            <span class="section-label">Verified Experiences</span>
+            <h2 class="section-heading">Client <strong>Testimonials</strong></h2>
         </div>
-        <div class="testimonial-slider">
-            <div class="testimonial-slide active">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Client" class="client-img">
+        <div class="testimonial-container">
+            <div class="testimonial-card active">
                 <p>"The wedding cake designed by Rose Cakes was an absolute masterpiece. It was the talk of our evening reception and tasted pure luxury!"</p>
-                <span class="client-name">Victoria H. &mdash; Beverly Hills</span>
+                <div class="client-meta">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Client Victoria Avatar" class="client-avatar">
+                    <div class="client-info">
+                        <h5>Victoria H.</h5>
+                        <p style="font-size: 0.75rem; color: var(--text-muted);">Beverly Hills</p>
+                    </div>
+                </div>
             </div>
-            <div class="testimonial-slide">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Client" class="client-img">
+            <div class="testimonial-card">
                 <p>"Incredible attention to detail. The gold foil and edible luxury sugar flowers were visually stunning and exceptionally well crafted."</p>
-                <span class="client-name">Maximilian D. &mdash; Manhattan Gala</span>
-            </div>
-        </div>
-    </section>
-
-    <section style="padding-bottom: 0;">
-        <div class="section-title">
-            <span>@RoseCakesAtelier</span>
-            <h2>Captured Moments</h2>
-        </div>
-        <div class="instagram-grid">
-            <div class="instagram-item">
-                <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?auto=format&fit=crop&w=500&q=80" alt="Atelier Item">
-                <div class="instagram-overlay"><i class="fa-brands fa-instagram"></i></div>
-            </div>
-            <div class="instagram-item">
-                <img src="https://images.unsplash.com/photo-1557925923-cd4648e21187?auto=format&fit=crop&w=500&q=80" alt="Atelier Item">
-                <div class="instagram-overlay"><i class="fa-brands fa-instagram"></i></div>
-            </div>
-            <div class="instagram-item">
-                <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=500&q=80" alt="Atelier Item">
-                <div class="instagram-overlay"><i class="fa-brands fa-instagram"></i></div>
-            </div>
-            <div class="instagram-item">
-                <img src="https://images.unsplash.com/photo-1511018556340-d16986a1c194?auto=format&fit=crop&w=500&q=80" alt="Atelier Item">
-                <div class="instagram-overlay"><i class="fa-brands fa-instagram"></i></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="reveal">
-        <div class="contact-layout">
-            <div class="info-panel">
-                <div class="section-title" style="text-align: left; margin-bottom: 30px;">
-                    <span>The Atelier</span>
-                    <h2>Connect With Us</h2>
+                <div class="client-meta">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Client Maximilian Avatar" class="client-avatar">
+                    <div class="client-info">
+                        <h5>Maximilian D.</h5>
+                        <p style="font-size: 0.75rem; color: var(--text-muted);">Manhattan Gala</p>
+                    </div>
                 </div>
-                <p><i class="fa-solid fa-location-dot"></i> 742 Champagne Boulevard, Suite 100, Luxury District</p>
-                <p><i class="fa-solid fa-envelope"></i> concierge@rosecakesluxury.com</p>
-                <p><i class="fa-solid fa-phone"></i> +1 (555) 839-2253</p>
-                <p><i class="fa-solid fa-clock"></i> Tues - Sat: 9:00 AM - 6:00 PM | Sun: By Appointment Only</p>
-                <a href="https://wa.me/1234567890" target="_blank" class="btn-luxury btn-gold" style="margin-top: 20px;"><i class="fa-brands fa-whatsapp"></i> Chat On WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding-bottom: 80px;">
+        <div style="text-align: center;">
+            <span class="section-label">@RoseCakesAtelier</span>
+            <h2 class="section-heading">Captured <strong>Moments</strong></h2>
+        </div>
+        <div class="instagram-staggered">
+            <div class="instagram-wrapper-block">
+                <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?auto=format&fit=crop&w=500&q=80" alt="Atelier Asset Production Step">
+                <div class="instagram-luxury-overlay"><i class="fa-brands fa-instagram"></i></div>
+            </div>
+            <div class="instagram-wrapper-block">
+                <img src="https://images.unsplash.com/photo-1557925923-cd4648e21187?auto=format&fit=crop&w=500&q=80" alt="Atelier Botanical Setting">
+                <div class="instagram-luxury-overlay"><i class="fa-brands fa-instagram"></i></div>
+            </div>
+            <div class="instagram-wrapper-block">
+                <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=500&q=80" alt="Atelier Detailed Modeling Layer">
+                <div class="instagram-luxury-overlay"><i class="fa-brands fa-instagram"></i></div>
+            </div>
+            <div class="instagram-wrapper-block">
+                <img src="https://images.unsplash.com/photo-1511018556340-d16986a1c194?auto=format&fit=crop&w=500&q=80" alt="Atelier Completed Pastry Presentation">
+                <div class="instagram-luxury-overlay"><i class="fa-brands fa-instagram"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="reveal" style="padding-top: 220px;">
+        <div class="contact-grid">
+            <div class="contact-details-panel">
+                <div class="info-block-wrapper">
+                    <span class="section-label">The Flagship Atelier</span>
+                    <h2 class="section-heading" style="margin-bottom: 45px;">Connect <strong>With Us</strong></h2>
+                    
+                    <div class="luxury-info-row">
+                        <i class="fa-solid fa-location-crosshairs"></i>
+                        <div>
+                            <h5>Physical Address</h5>
+                            <p>742 Champagne Boulevard, Suite 100, Luxury District</p>
+                        </div>
+                    </div>
+                    <div class="luxury-info-row">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <div>
+                            <h5>Digital Inquiries</h5>
+                            <p>concierge@rosecakesluxury.com</p>
+                        </div>
+                    </div>
+                    <div class="luxury-info-row">
+                        <i class="fa-solid fa-headset"></i>
+                        <div>
+                            <h5>Direct Concierge Hotwire</h5>
+                            <p>+1 (555) 839-2253</p>
+                        </div>
+                    </div>
+                </div>
                 
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.733248043701!2d-118.4028383234241!3d34.063561617208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc0bc7edf0e3%3A0x1d60db2d43e5c9a1!2sRodeo%20Dr%2C%20Beverly%20Hills%2C%20CA%2090210!5e0!3m2!1sen!2sus!4v1684345678901!5m2!1sen!2sus" width="100%" height="100%" style="border:0; filter: grayscale(1) contrast(1.2) invert(0);" allowfullscreen="" loading="lazy"></iframe>
+                <a href="https://wa.me/1234567890" target="_blank" class="btn-atelier" style="align-self: flex-start; margin-bottom: 40px;"><i class="fa-brands fa-whatsapp" style="margin-right: 10px;"></i> Institutional WhatsApp Channels</a>
+                
+                <div class="map-wrapper-frame">
+                    <iframe src="https://maps.google.com/maps?q=luxury%20district&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
-            <div style="background: var(--beige); padding: 40px; border-radius: 4px;">
-                <h3 style="margin-bottom: 30px; font-size: 1.8rem;">Send An Inquiry</h3>
+            <div class="contact-form-card" style="background: white; border: 1px solid var(--border-light); padding: 60px;">
+                <span class="section-label" style="margin-bottom: 5px;">Digital Intake Node</span>
+                <h3 style="font-size: 2.2rem; font-weight:300; margin-bottom: 40px;">Send An <strong>Inquiry portfolio</strong></h3>
                 <form action="#">
                     <div class="form-group">
-                        <label>Your Name</label>
+                        <label>Your Legal Name</label>
                         <input type="text" required>
                     </div>
                     <div class="form-group">
-                        <label>Email Address</label>
+                        <label>Secure Email Address</label>
                         <input type="email" required>
                     </div>
                     <div class="form-group">
-                        <label>Message</label>
-                        <textarea rows="5" required></textarea>
+                        <label>Structural Messaging Metrics</label>
+                        <textarea rows="6" placeholder="Provide event parameters, scheduling fields, and logistical directions..." required></textarea>
                     </div>
-                    <button type="submit" class="btn-luxury" style="width: 100%;">Send Message</button>
+                    <button type="submit" class="btn-atelier btn-atelier-filled" style="width: 100%; border: none;">Transmit Secure Query</button>
                 </form>
             </div>
         </div>
@@ -1162,40 +1367,40 @@
 
     <footer>
         <div class="footer-grid">
-            <div class="footer-col">
-                <a href="#" class="brand-logo" style="color: white; margin-bottom: 20px;">Rose<span>Cakes</span></a>
-                <p style="color: rgba(255,253,251,0.6); font-size: 0.95rem;">Artisanal perfection, tailored luxury baking experiences for life’s most elegant celebrations.</p>
+            <div class="footer-brand-column">
+                <a href="#" class="brand-logo">Rose<span>Cakes</span></a>
+                <p>Artisanal perfection, tailored luxury baking experiences for life’s most elegant celebrations.</p>
             </div>
-            <div class="footer-col">
-                <h4>Explore</h4>
+            <div class="footer-nav-column">
+                <h4>Explore Portfolio</h4>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#collections">Collections</a></li>
-                    <li><a href="#about">Our Story</a></li>
-                    <li><a href="#booking">Bespoke Ordering</a></li>
+                    <li><a href="#home">Home Base</a></li>
+                    <li><a href="#collections">Collections Suite</a></li>
+                    <li><a href="#about">Our Story Manifesto</a></li>
+                    <li><a href="#booking">Bespoke Ordering Concierge</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h4>Legal</h4>
+            <div class="footer-nav-column">
+                <h4>Legal Matrix</h4>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Privacy Framework</a></li>
                     <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Allergens Statement</a></li>
-                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Allergens Statement Document</a></li>
+                    <li><a href="#">Shipping Protocols</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
+            <div class="footer-newsletter-column">
                 <h4>Join The Atelier List</h4>
-                <p style="color: rgba(255,253,251,0.6); font-size: 0.85rem; margin-bottom: 15px;">Receive private collection previews, luxury flavor releases, and priority booking invitations.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Your Email Address">
-                    <button type="submit" class="btn-luxury btn-gold" style="width: 100%; color: white;">Subscribe</button>
+                <p>Receive private collection previews, luxury flavor releases, and priority booking invitations.</p>
+                <form class="newsletter-form-container" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Your Luxury Email Address" class="luxury-input-field">
+                    <button type="submit" class="btn-atelier btn-atelier-filled" style="width: 100%; border: none;">Subscribe To Private Portfolio</button>
                 </form>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Rose Cakes Brand Inc. All Worldwide Rights Reserved.</p>
-            <div class="footer-socials">
+        <div class="footer-bottom-bar">
+            <p>© 2026 Rose Cakes Brand Inc. All Worldwide Rights Reserved.</p>
+            <div class="footer-social-wrapper">
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#"><i class="fa-brands fa-pinterest"></i></a>
                 <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -1234,7 +1439,6 @@
                 cart.push({ name, price, qty: 1 });
             }
             updateCartUI();
-            // Automatically open cart to show visual confirmation
             document.getElementById('cartDrawer').classList.add('open');
         }
 
@@ -1244,7 +1448,7 @@
             const subtotalElement = document.getElementById('cart-subtotal');
             
             if(cart.length === 0) {
-                cartItemsContainer.innerHTML = `<p style="text-align: center; color: var(--text-gray); margin-top: 40px;">Your bag is currently empty.</p>`;
+                cartItemsContainer.innerHTML = `<p style="text-align: center; color: var(--text-muted); margin-top: 60px; font-weight:300;">Your curation portfolio is currently empty.</p>`;
                 cartCountElement.innerText = '0';
                 subtotalElement.innerText = 'R0.00';
                 return;
@@ -1258,11 +1462,11 @@
                 total += (item.price * item.qty);
                 totalQty += item.qty;
                 itemsHTML += `
-                    <div class="cart-item">
-                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=100&q=80" alt="Product Image">
-                        <div class="cart-item-details">
-                            <h4>R{item.name}</h4>
-                            <p>R{item.qty} x RR{item.price}.00</p>
+                    <div class="editorial-cart-item">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=100&q=80" alt="Item Frame">
+                        <div class="cart-item-meta">
+                            <h4>${item.name}</h4>
+                            <p>${item.qty} &times; R${item.price}.00</p>
                         </div>
                     </div>
                 `;
@@ -1270,7 +1474,7 @@
 
             cartItemsContainer.innerHTML = itemsHTML;
             cartCountElement.innerText = totalQty;
-            subtotalElement.innerText = `RR{total}.00`;
+            subtotalElement.innerText = `R${total}.00`;
         }
 
         // --- CONCIERGE LIVE PRICING CALCULATOR ---
@@ -1280,27 +1484,47 @@
             const flavorVal = parseInt(document.getElementById('booking-flavor').value) || 0;
             
             const totalEstimate = 150 + eventVal + sizeVal + flavorVal;
-            document.getElementById('live-price-val').innerText = `RR{totalEstimate}.00`;
+            document.getElementById('live-price-val').innerText = `R${totalEstimate}.00`;
         }
 
-        // --- TESTIMONIAL CAROUSEL TRANSITIONS ---
-        const slides = document.querySelectorAll('.testimonial-slide');
+        // --- EDITORIAL TESTIMONIAL CAROUSEL SLIDER ---
+        const slides = document.querySelectorAll('.testimonial-card');
         let currentSlide = 0;
 
         setInterval(() => {
             slides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
-        }, 5000);
+        }, 6000);
 
-        // --- SCROLL REVEAL EFFECTS MANAGER ---
+        // --- LUXURY QUICK VIEW CONTEXT SCHEMATIC ---
+        function openQuickView(name, price, imgUrl, category) {
+            document.getElementById('modal-title').innerText = name;
+            document.getElementById('modal-price').innerText = `R${price}.00`;
+            document.getElementById('modal-img').src = imgUrl;
+            document.getElementById('modal-label').innerText = category;
+            
+            // Re-bind exact functional variables directly inside implementation context
+            document.getElementById('modal-add-btn').onclick = function() {
+                addToCart(name, price);
+                closeQuickView();
+            };
+            
+            document.getElementById('quickViewModal').classList.add('open');
+        }
+
+        function closeQuickView() {
+            document.getElementById('quickViewModal').classList.remove('open');
+        }
+
+        // --- SCROLL REVEAL EFFECTS CONTROLLER ---
         const revealElements = document.querySelectorAll('.reveal');
         
         const revealOnScroll = () => {
             for (let i = 0; i < revealElements.length; i++) {
                 let windowHeight = window.innerHeight;
                 let elementTop = revealElements[i].getBoundingClientRect().top;
-                let elementVisible = 150;
+                let elementVisible = 120;
 
                 if (elementTop < windowHeight - elementVisible) {
                     revealElements[i].classList.add('active');
@@ -1309,7 +1533,6 @@
         }
 
         window.addEventListener('scroll', revealOnScroll);
-        // Execute initially to check for elements on viewport entry point
         revealOnScroll();
     </script>
 </body>
