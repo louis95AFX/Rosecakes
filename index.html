@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rose Cakes | Luxury Premium Bakery & Bespoke Cake Atelier</title>
+    <title>Rosy's Cakes and baking Supplies</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -1126,6 +1126,14 @@
             .instagram-staggered { grid-template-columns: 1fr; }
             .hero-btns .btn-atelier { width: 100%; }
         }
+        .product-card {
+    transition: all 0.4s ease, opacity 0.4s ease;
+}
+.btn-active {
+    background: var(--luxury-dark) !important;
+    color: white !important;
+    border-color: var(--luxury-dark) !important;
+}
     </style>
 </head>
 <body>
@@ -1134,7 +1142,7 @@
 
     <header id="navbar">
         <div class="nav-container">
-            <a href="#" class="brand-logo">Rose<span>Cakes</span></a>
+            <a href="#" class="brand-logo">Rosy's<span>Cakes and baking Supplies</span></a>
             <ul class="nav-links">
                 <li><a href="#home" onclick="toggleMenu()">Home</a></li>
                 <li><a href="#collections" onclick="toggleMenu()">Collections</a></li>
@@ -1203,64 +1211,494 @@
     </section>
 
     <section id="collections" class="reveal">
-        <div style="text-align: center;">
-            <span class="section-label">The Rose Portfolio</span>
+        <div style="text-align:center;">
+            <span class="section-label">The Rosy Portfolio</span>
             <h2 class="section-heading">Curated <strong>Masterpieces</strong></h2>
         </div>
+    
+        <!-- CATEGORY FILTERS -->
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:15px; margin-bottom:40px;">
+
+            <button class="btn-atelier collections-filter-btn btn-active"
+                onclick="filterCategory('all', event)">
+                All Cakes
+            </button>
+        
+            <button class="btn-atelier collections-filter-btn"
+                onclick="filterCategory('round-bento', event)">
+                Round Bento Box
+            </button>
+        
+            <button class="btn-atelier collections-filter-btn"
+                onclick="filterCategory('heart-bento', event)">
+                Heart Bento Box
+            </button>
+        
+            <button class="btn-atelier collections-filter-btn"
+                onclick="filterCategory('heart-cake', event)">
+                Heart Cakes
+            </button>
+        
+            <button class="btn-atelier collections-filter-btn"
+                onclick="filterCategory('tall-kids', event)">
+                Tall Kids Cakes
+            </button>
+        
+            <button class="btn-atelier collections-filter-btn"
+                onclick="filterCategory('8inch', event)">
+                8 Inch Cakes
+            </button>
+        
+        </div>
+    
+        <!-- PRODUCTS GRID -->
         <div class="grid-layout">
-            <div class="product-card">
-                <span class="badge">Signature</span>
+    
+            <div class="product-card" data-category="round-bento">
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1535141192574-5d4897c13636?auto=format&fit=crop&w=600&q=80" alt="Wedding Cake Portfolio">
+                    <img src="bento1.jpeg">
                     <div class="product-actions-overlay">
-                        <button class="action-circle-btn" onclick="addToCart('Le Grand Rose Wedding Cake', 450)"><i class="fa-solid fa-bag-shopping"></i></button>
-                        <button class="action-circle-btn" onclick="openQuickView('Le Grand Rose Wedding Cake', 450, 'https://images.unsplash.com/photo-1535141192574-5d4897c13636?auto=format&fit=crop&w=600&q=80', 'Wedding Architecture')"><i class="fa-solid fa-expand"></i></button>
+                        <button class="action-circle-btn" onclick="addToCart('Adults Bento', 650, this)">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="product-info">
-                    <div>
-                        <p class="product-category">Wedding Cakes</p>
-                        <h3>Le Grand Rose Cake</h3>
-                    </div>
-                    <p class="price">R450.00</p>
+                    <p class="product-category">Round Bento Box</p>
+                    <h3>Adults Bento</h3>
+                    <p class="price">R650.00</p>
                 </div>
             </div>
-
-            <div class="product-card">
-                <span class="badge">Popular</span>
+            
+            <div class="product-card" data-category="round-bento">
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1562440499-64c9a111f713?auto=format&fit=crop&w=600&q=80" alt="Birthday Cake Architecture">
+                    <img src="bento2.jpeg">
                     <div class="product-actions-overlay">
-                        <button class="action-circle-btn" onclick="addToCart('Champagne Shimmer Birthday Cake', 180)"><i class="fa-solid fa-bag-shopping"></i></button>
-                        <button class="action-circle-btn" onclick="openQuickView('Champagne Shimmer Birthday Cake', 180, 'https://images.unsplash.com/photo-1562440499-64c9a111f713?auto=format&fit=crop&w=600&q=80', 'Gala Collections')"><i class="fa-solid fa-expand"></i></button>
+                        <button class="action-circle-btn" onclick="addToCart('Girl\'s Bento', 650, this)">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="product-info">
-                    <div>
-                        <p class="product-category">Birthday Cakes</p>
-                        <h3>Champagne Shimmer</h3>
-                    </div>
-                    <p class="price">R180.00</p>
+                    <p class="product-category">Round Bento Box</p>
+                    <h3>Girl's Bento</h3>
+                    <p class="price">R650.00</p>
                 </div>
             </div>
-
-            <div class="product-card">
+            
+            <div class="product-card" data-category="round-bento">
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=600&q=80" alt="Luxury Mignardise">
+                    <img src="bento3.jpeg">
                     <div class="product-actions-overlay">
-                        <button class="action-circle-btn" onclick="addToCart('Golden Velvet Cupcakes (Dozen)', 65)"><i class="fa-solid fa-bag-shopping"></i></button>
-                        <button class="action-circle-btn" onclick="openQuickView('Golden Velvet Box', 65, 'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=600&q=80', 'Luxury Mignardise')"><i class="fa-solid fa-expand"></i></button>
+                        <button class="action-circle-btn" onclick="addToCart('Boy\'s Bento', 650, this)">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="product-info">
-                    <div>
-                        <p class="product-category">Luxury Cupcakes</p>
-                        <h3>Golden Velvet Box</h3>
-                    </div>
-                    <p class="price">R65.00</p>
+                    <p class="product-category">Round Bento Box</p>
+                    <h3>Boy's Bento</h3>
+                    <p class="price">R650.00</p>
                 </div>
+            </div>
+            
+            <div class="product-card" data-category="round-bento">
+                <div class="img-container">
+                    <img src="bento4.jpeg">
+                    <div class="product-actions-overlay">
+                        <button class="action-circle-btn" onclick="addToCart('Teen\'s Bento', 650, this)">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Round Bento Box</p>
+                    <h3>Teen's Bento</h3>
+                    <p class="price">R650.00</p>
+                </div>
+            </div>
+            
+             <div class="product-card" data-category="round-bento">
+                <div class="img-container">
+                    <img src="bento5.jpeg">
+                    <div class="product-actions-overlay">
+                        <button class="action-circle-btn" onclick="addToCart('Adults', 650, this)">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Round Bento Box</p>
+                    <h3>Adults</h3>
+                    <p class="price">R650.00</p>
+                </div>
+            </div>
+            
+             <div class="product-card" data-category="round-bento">
+                <div class="img-container">
+                    <img src="bento6.jpeg">
+                    <div class="product-actions-overlay">
+                        <button class="action-circle-btn" onclick="addToCart('Mom\'s', 650, this)">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Round Bento Box</p>
+                    <h3>Mom's</h3>
+                    <p class="price">R650.00</p>
+                </div>
+            </div>
+            
+             <div class="product-card" data-category="round-bento">
+                <div class="img-container">
+                    <img src="bento7.jpeg">
+                    <div class="product-actions-overlay">
+                        <button class="action-circle-btn" onclick="addToCart('Graduation', 650, this)">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Round Bento Box</p>
+                    <h3>Graduation</h3>
+                    <p class="price">R650.00</p>
+                </div>
+            </div>
+                    <!-- ----------------------------------Heart box---------------------------------- -->
+    
+                    <div class="product-card" data-category="heart-bento">
+                        <div class="img-container">
+                            <img src="heartbox1.jpeg">
+                            <div class="product-actions-overlay">
+                                <button class="action-circle-btn" onclick="addToCart('Graduation & Achievement', 750, this)">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">Heart Bento Box</p>
+                            <h3>Graduation & Achievement</h3>
+                            <p class="price">R750.00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" data-category="heart-bento">
+                        <div class="img-container">
+                            <img src="heartbox2.jpeg">
+                            <div class="product-actions-overlay">
+                                <button class="action-circle-btn" onclick="addToCart('Classic Personalized Romance', 750, this)">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">Heart Bento Box</p>
+                            <h3>Classic Personalized Romance</h3>
+                            <p class="price">R750.00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" data-category="heart-bento">
+                        <div class="img-container">
+                            <img src="heartbox3.jpeg">
+                            <div class="product-actions-overlay">
+                                <button class="action-circle-btn" onclick="addToCart('Pretty Birthday', 750, this)">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">Heart Bento Box</p>
+                            <h3>Pretty Birthday</h3>
+                            <p class="price">R750.00</p>
+                        </div>
+                    </div>
+            <!-- ---------------------------------Heart Cake----------------------------- -->
+
+<div class="product-card" data-category="heart-cake">
+    <div class="img-container">
+        <img src="nocup1.jpeg">
+        <div class="product-actions-overlay">
+            <button class="action-circle-btn" onclick="addToCart('The Lavender \'Legal Baby\' Cake', 750, this)">
+                <i class="fa-solid fa-bag-shopping"></i>
+            </button>
+        </div>
+    </div>
+    <div class="product-info">
+        <p class="product-category">Heart Cake (without cupcakes)</p>
+        <h3>The Lavender "Legal Baby" Cake</h3>
+        <p class="price">R750.00</p>
+    </div>
+</div>
+
+<div class="product-card" data-category="heart-cake">
+    <div class="img-container">
+        <img src="nocup2.jpeg">
+        <div class="product-actions-overlay">
+            <button class="action-circle-btn" onclick="addToCart('The Cheetah Print & Pink \'Sweet 16\' Cake', 750, this)">
+                <i class="fa-solid fa-bag-shopping"></i>
+            </button>
+        </div>
+    </div>
+    <div class="product-info">
+        <p class="product-category">Heart Cake (without cupcakes)</p>
+        <h3>The Cheetah Print & Pink "Sweet 16" Cake</h3>
+        <p class="price">R750.00</p>
+    </div>
+</div>
+
+<div class="product-card" data-category="heart-cake">
+    <div class="img-container">
+        <img src="nocup3.jpeg">
+        <div class="product-actions-overlay">
+            <button class="action-circle-btn" onclick="addToCart('The Salmon Pink \'Princess Destiny\' Cake', 750, this)">
+                <i class="fa-solid fa-bag-shopping"></i>
+            </button>
+        </div>
+    </div>
+    <div class="product-info">
+        <p class="product-category">Heart Cake (without cupcakes)</p>
+        <h3>The Salmon Pink "Princess Destiny" Cake</h3>
+        <p class="price">R750.00</p>
+    </div>
+</div>
+
+<div class="product-card" data-category="heart-cake">
+    <div class="img-container">
+        <img src="nocup4.jpeg">
+        <div class="product-actions-overlay">
+            <button class="action-circle-btn" onclick="addToCart('The Glittery Bubblegum Pink Birthday Cake', 750, this)">
+                <i class="fa-solid fa-bag-shopping"></i>
+            </button>
+        </div>
+    </div>
+    <div class="product-info">
+        <p class="product-category">Heart Cake (without cupcakes)</p>
+        <h3>The Glittery Bubblegum Pink Birthday Cake</h3>
+        <p class="price">R750.00</p>
+    </div>
+</div>
+
+
+        <!-- ---------------------------------Tall kids cake----------------------------- -->
+
+
+      
+        <div class="product-card" data-category="tall-kids">
+            <div class="img-container">
+                <img src="tall1.jpeg">
+                <div class="product-actions-overlay">
+                    <button class="action-circle-btn" onclick="addToCart('Soccer / Sports Hero', 1250, this)">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="product-info">
+                <p class="product-category">Tall Kids Cakes</p>
+                <h3>Soccer / Sports Hero</h3>
+                <p class="price">R1250.00</p>
             </div>
         </div>
+        
+        <div class="product-card" data-category="tall-kids">
+            <div class="img-container">
+                <img src="tall2.jpeg">
+                <div class="product-actions-overlay">
+                    <button class="action-circle-btn" onclick="addToCart('Toddler Favorites', 1250, this)">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="product-info">
+                <p class="product-category">Tall Kids Cakes</p>
+                <h3>Toddler Favorites</h3>
+                <p class="price">R1250.00</p>
+            </div>
+        </div>
+        
+        <div class="product-card" data-category="tall-kids">
+            <div class="img-container">
+                <img src="tall3.jpeg">
+                <div class="product-actions-overlay">
+                    <button class="action-circle-btn" onclick="addToCart('Jungle Safari', 1250, this)">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="product-info">
+                <p class="product-category">Tall Kids Cakes</p>
+                <h3>Jungle Safari</h3>
+                <p class="price">R1250.00</p>
+            </div>
+        </div>
+        
+        <div class="product-card" data-category="tall-kids">
+            <div class="img-container">
+                <img src="tall4.jpeg">
+                <div class="product-actions-overlay">
+                    <button class="action-circle-btn" onclick="addToCart('Whimsical Ballerina', 1250, this)">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="product-info">
+                <p class="product-category">Tall Kids Cakes</p>
+                <h3>Whimsical Ballerina</h3>
+                <p class="price">R1250.00</p>
+            </div>
+        </div>
+        
+        <div class="product-card" data-category="tall-kids">
+            <div class="img-container">
+                <img src="tall5.jpeg">
+                <div class="product-actions-overlay">
+                    <button class="action-circle-btn" onclick="addToCart('CoComelon Fun', 1250, this)">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="product-info">
+                <p class="product-category">Tall Kids Cakes</p>
+                <h3>CoComelon Fun</h3>
+                <p class="price">R1250.00</p>
+            </div>
+        </div>
+        
+        <div class="product-card" data-category="tall-kids">
+            <div class="img-container">
+                <img src="tall6.jpeg">
+                <div class="product-actions-overlay">
+                    <button class="action-circle-btn" onclick="addToCart('Superhero Action', 1250, this)">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="product-info">
+                <p class="product-category">Tall Kids Cakes</p>
+                <h3>Superhero Action</h3>
+                <p class="price">R1250.00</p>
+            </div>
+        </div>
+        
+         <div class="product-card" data-category="tall-kids">
+            <div class="img-container">
+                <img src="tall7.jpeg">
+                <div class="product-actions-overlay">
+                    <button class="action-circle-btn" onclick="addToCart('Soccer Champion', 1250, this)">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="product-info">
+                <p class="product-category">Tall Kids Cakes</p>
+                <h3>Soccer Champion</h3>
+                <p class="price">R1250.00</p>
+            </div>
+        </div>
+        
+        <div class="product-card" data-category="tall-kids">
+            <div class="img-container">
+                <img src="tall8.jpeg">
+                <div class="product-actions-overlay">
+                    <button class="action-circle-btn" onclick="addToCart('Pups Rescue', 1250, this)">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="product-info">
+                <p class="product-category">Tall Kids Cakes</p>
+                <h3>Pups Rescue</h3>
+                <p class="price">R1250.00</p>
+            </div>
+        </div>
+        
+        <div class="product-card" data-category="tall-kids">
+            <div class="img-container">
+                <img src="tall9.jpeg">
+                <div class="product-actions-overlay">
+                    <button class="action-circle-btn" onclick="addToCart('Spiderman Mega Hero Cake', 1250, this)">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="product-info">
+                <p class="product-category">Tall Kids Cakes</p>
+                <h3>Spiderman Mega Hero Cake</h3>
+                <p class="price">R1250.00</p>
+            </div>
+        </div>
+        
+        <div class="product-card" data-category="tall-kids">
+            <div class="img-container">
+                <img src="tall10.jpeg">
+                <div class="product-actions-overlay">
+                    <button class="action-circle-btn" onclick="addToCart('Blushing Ballerina & Crown Cake', 1250, this)">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="product-info">
+                <p class="product-category">Tall Kids Cakes</p>
+                <h3>Blushing Ballerina & Crown Cake</h3>
+                <p class="price">R1250.00</p>
+            </div>
+        </div>
+        
+        
+
+            <!-- ---------------------------------8 INCH CAKE----------------------------- -->
+
+            <div class="product-card" data-category="8inch">
+                <div class="img-container">
+                    <img src="8inch1.jpeg">
+                    <div class="product-actions-overlay">
+                        <button class="action-circle-btn" onclick="addToCart('Classic Occasion', 1650, this)">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">8 Inch Cake</p>
+                    <h3>Classic Occasion</h3>
+                    <p class="price">R1650.00</p>
+                </div>
+            </div>
+            
+             <div class="product-card" data-category="8inch">
+                <div class="img-container">
+                    <img src="8inch2.jpeg">
+                    <div class="product-actions-overlay">
+                        <button class="action-circle-btn" onclick="addToCart('Custom Corporate & Event', 1650, this)">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">8 Inch Cake</p>
+                    <h3>Custom Corporate & Event</h3>
+                    <p class="price">R1650.00</p>
+                </div>
+            </div>
+            
+      
+
+
+                        <!-- ---------------------------------8 INCH CAKE----------------------------- -->
+
+        </div>
+    
+        <!-- PAGINATION CONTROLS -->
+        <div style="display:flex; justify-content:center; gap:20px; margin-top:50px; align-items:center;">
+            <button class="btn-atelier" onclick="changePage(-1)">Previous</button>
+    
+            <span id="page-indicator" style="font-size:0.9rem; letter-spacing:0.2em; text-transform:uppercase;">
+                Page 1
+            </span>
+    
+            <button class="btn-atelier btn-atelier-filled" onclick="changePage(1)">Next</button>
+        </div>
+    
     </section>
 
     <section id="about" class="reveal">
@@ -1271,7 +1709,7 @@
             <div class="about-text">
                 <span class="section-label">Our Manifesto</span>
                 <h2 class="section-heading" style="margin-bottom: 35px;">Pure Elegance In <strong>Every Slice</strong></h2>
-                <p>Welcome to our sweet world. At Rose Cakes, we believe that every grand milestone or intimate gathering deserves a spectacular center of attention. Our handcrafted designs blend beautiful modern elegance with delicious, time-tested recipes to bring warmth and joy to your special day.</p>
+                <p>Welcome to our sweet world. At Rosy's Cakes, we believe that every grand milestone or intimate gathering deserves a spectacular center of attention. Our handcrafted designs blend beautiful modern elegance with delicious, time-tested recipes to bring warmth and joy to your special day.</p>
                 <p>We source only ultra-premium ingredients: organic Madagascar bourbon vanilla pods, pure Belgian chocolate couvertures, and rich European-style cultured butter.</p>
                 <div class="about-features">
                     <div class="feature-block">
@@ -1348,7 +1786,7 @@
         </div>
         <div class="testimonial-container">
             <div class="testimonial-card active">
-                <p>"The wedding cake designed by Rose Cakes was an absolute masterpiece. It was the talk of our evening reception and tasted pure luxury!"</p>
+                <p>"The wedding cake designed by Rosy's Cakes was an absolute masterpiece. It was the talk of our evening reception and tasted pure luxury!"</p>
                 <div class="client-meta">
                     <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Client Victoria Avatar" class="client-avatar">
                     <div class="client-info">
@@ -1406,21 +1844,21 @@
                         <i class="fa-solid fa-location-crosshairs"></i>
                         <div>
                             <h5>Physical Address</h5>
-                            <p>742 Champagne Boulevard, Suite 100, Luxury District</p>
+                            <p>Protea Glen</p>
                         </div>
                     </div>
                     <div class="luxury-info-row">
                         <i class="fa-solid fa-paper-plane"></i>
                         <div>
                             <h5>Digital Inquiries</h5>
-                            <p>concierge@rosecakesluxury.com</p>
+                            <p>info@rosyscakes.co.za</p>
                         </div>
                     </div>
                     <div class="luxury-info-row">
                         <i class="fa-solid fa-headset"></i>
                         <div>
                             <h5>Direct Concierge Hotwire</h5>
-                            <p>+1 (555) 839-2253</p>
+                            <p> 076 9643782</p>
                         </div>
                     </div>
                 </div>
@@ -1456,7 +1894,7 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-brand-column">
-                <a href="#" class="brand-logo">Rose<span>Cakes</span></a>
+                <a href="#" class="brand-logo">Rosy's<span>Cakes</span></a>
                 <p>Artisanal perfection, tailored luxury baking experiences for life’s most elegant celebrations.</p>
             </div>
             <div class="footer-nav-column">
@@ -1487,7 +1925,7 @@
             </div>
         </div>
         <div class="footer-bottom-bar">
-            <p>© 2026 Rose Cakes Brand Inc. All Worldwide Rights Reserved.</p>
+            <p>© 2026 Rosy's and baking Supplies Inc. All Worldwide Rights Reserved.</p>
             <div class="footer-social-wrapper">
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#"><i class="fa-brands fa-pinterest"></i></a>
@@ -1497,134 +1935,322 @@
     </footer>
 
     <script>
-        // --- STICKY NAVIGATION CONTROLLER ---
+        // =========================
+        // ACTIVE CATEGORY
+        // =========================
+        let currentCategory = 'all';
+    
+        // =========================
+        // FILTER CATEGORY
+        // =========================
+        function filterCategory(category, event) {
+            currentCategory = category;
+            currentPage = 1;
+    
+            const buttons = document.querySelectorAll('.collections-filter-btn');
+    
+            // remove active state
+            buttons.forEach(btn => {
+                btn.classList.remove('btn-active');
+                btn.classList.remove('btn-atelier-filled');
+            });
+    
+            // add active state
+            if (event) {
+                event.target.classList.add('btn-active');
+                event.target.classList.add('btn-atelier-filled');
+            }
+    
+            renderPagination();
+        }
+    
+        // =========================
+        // STICKY NAVIGATION
+        // =========================
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
+    
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
         });
-
-        // --- MOBILE MENU CONTROLLER ---
+    
+        // =========================
+        // MOBILE MENU
+        // =========================
         function toggleMenu() {
             if (window.innerWidth <= 768) {
                 document.querySelector('.nav-links').classList.toggle('open');
             }
         }
-
-        // --- SHOPPING CART STATE MANAGEMENT ---
+    
+        // =========================
+        // CART
+        // =========================
         let cart = [];
-        
+    
         function toggleCart() {
             document.getElementById('cartDrawer').classList.toggle('open');
         }
+    
+        // NOW INCLUDES IMAGE
+        function addToCart(name, price, imageSource) {
+    let image = '';
 
-        function addToCart(name, price) {
-            const existingItem = cart.find(item => item.name === name);
-            if(existingItem) {
-                existingItem.qty += 1;
-            } else {
-                cart.push({ name, price, qty: 1 });
-            }
-            updateCartUI();
-            document.getElementById('cartDrawer').classList.add('open');
+    // Check if the argument is a string (URL) or a DOM element (this)
+    if (typeof imageSource === 'string') {
+        image = imageSource;
+    } else if (imageSource && typeof imageSource.closest === 'function') {
+        // Find the parent product card, then find the image inside its container
+        const card = imageSource.closest('.product-card');
+        if (card) {
+            const imgElement = card.querySelector('.img-container img');
+            image = imgElement ? imgElement.getAttribute('src') : '';
         }
+    }
 
+    // Match existing items by name to correctly increment quantity
+    const existingItem = cart.find(item => item.name === name);
+
+    if (existingItem) {
+        existingItem.qty += 1;
+    } else {
+        cart.push({
+            name,
+            price,
+            image,
+            qty: 1
+        });
+    }
+
+    updateCartUI();
+    document.getElementById('cartDrawer').classList.add('open');
+}
         function updateCartUI() {
+    
             const cartItemsContainer = document.getElementById('cartItems');
             const cartCountElement = document.getElementById('cart-count');
             const subtotalElement = document.getElementById('cart-subtotal');
-            
-            if(cart.length === 0) {
-                cartItemsContainer.innerHTML = `<p style="text-align: center; color: var(--text-muted); margin-top: 60px; font-weight:300;">Your curation portfolio is currently empty.</p>`;
+    
+            if (cart.length === 0) {
+    
+                cartItemsContainer.innerHTML = `
+                    <p style="
+                        text-align:center;
+                        color:var(--text-muted);
+                        margin-top:60px;
+                        font-weight:300;
+                    ">
+                        Your curation portfolio is currently empty.
+                    </p>
+                `;
+    
                 cartCountElement.innerText = '0';
                 subtotalElement.innerText = 'R0.00';
+    
                 return;
             }
-
+    
             let itemsHTML = '';
             let total = 0;
             let totalQty = 0;
-
+    
             cart.forEach(item => {
+    
                 total += (item.price * item.qty);
                 totalQty += item.qty;
+    
                 itemsHTML += `
                     <div class="editorial-cart-item">
-                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=100&q=80" alt="Item Frame">
+    
+                        <img src="${item.image}" alt="${item.name}">
+    
                         <div class="cart-item-meta">
                             <h4>${item.name}</h4>
                             <p>${item.qty} × R${item.price}.00</p>
                         </div>
+    
                     </div>
                 `;
             });
-
+    
             cartItemsContainer.innerHTML = itemsHTML;
             cartCountElement.innerText = totalQty;
             subtotalElement.innerText = `R${total}.00`;
         }
-
-        // --- CONCIERGE LIVE PRICING CALCULATOR ---
+    
+        // =========================
+        // BOOKING PRICE CALCULATOR
+        // =========================
         function updateBookingEstimate() {
-            const eventVal = parseInt(document.getElementById('booking-event').value) || 0;
-            const sizeVal = parseInt(document.getElementById('booking-size').value) || 0;
-            const flavorVal = parseInt(document.getElementById('booking-flavor').value) || 0;
-            
+    
+            const eventVal =
+                parseInt(document.getElementById('booking-event').value) || 0;
+    
+            const sizeVal =
+                parseInt(document.getElementById('booking-size').value) || 0;
+    
+            const flavorVal =
+                parseInt(document.getElementById('booking-flavor').value) || 0;
+    
             const totalEstimate = 150 + eventVal + sizeVal + flavorVal;
-            document.getElementById('live-price-val').innerText = `R${totalEstimate}.00`;
+    
+            document.getElementById('live-price-val').innerText =
+                `R${totalEstimate}.00`;
         }
-
-        // --- EDITORIAL TESTIMONIAL CAROUSEL SLIDER ---
+    
+        // =========================
+        // TESTIMONIAL SLIDER
+        // =========================
         const slides = document.querySelectorAll('.testimonial-card');
         let currentSlide = 0;
-
-        if(slides.length > 0) {
+    
+        if (slides.length > 0) {
+    
             setInterval(() => {
+    
                 slides[currentSlide].classList.remove('active');
-                currentSlide = (currentSlide + 1) % slides.length;
+    
+                currentSlide =
+                    (currentSlide + 1) % slides.length;
+    
                 slides[currentSlide].classList.add('active');
+    
             }, 6000);
         }
-
-        // --- LUXURY QUICK VIEW CONTEXT SCHEMATIC ---
+    
+        // =========================
+        // QUICK VIEW
+        // =========================
         function openQuickView(name, price, imgUrl, category) {
+    
             document.getElementById('modal-title').innerText = name;
             document.getElementById('modal-price').innerText = `R${price}.00`;
             document.getElementById('modal-img').src = imgUrl;
             document.getElementById('modal-label').innerText = category;
-            
-            document.getElementById('modal-add-btn').onclick = function() {
-                addToCart(name, price);
+    
+            document.getElementById('modal-add-btn').onclick = function () {
+    
+                addToCart(name, price, imgUrl);
+    
                 closeQuickView();
             };
-            
-            document.getElementById('quickViewModal').classList.add('open');
+    
+            document.getElementById('quickViewModal')
+                .classList.add('open');
         }
-
+    
         function closeQuickView() {
-            document.getElementById('quickViewModal').classList.remove('open');
+            document.getElementById('quickViewModal')
+                .classList.remove('open');
         }
-
-        // --- SCROLL REVEAL EFFECTS CONTROLLER ---
+    
+        // =========================
+        // SCROLL REVEAL
+        // =========================
         const revealElements = document.querySelectorAll('.reveal');
-        
+    
         const revealOnScroll = () => {
+    
             for (let i = 0; i < revealElements.length; i++) {
+    
                 let windowHeight = window.innerHeight;
-                let elementTop = revealElements[i].getBoundingClientRect().top;
-                let elementVisible = 80; // Decreased slight margins for mobile structural efficiency
-
+    
+                let elementTop =
+                    revealElements[i].getBoundingClientRect().top;
+    
+                let elementVisible = 80;
+    
                 if (elementTop < windowHeight - elementVisible) {
                     revealElements[i].classList.add('active');
                 }
             }
         }
-
+    
         window.addEventListener('scroll', revealOnScroll);
+    
         revealOnScroll();
+    
+        // =========================
+        // PAGINATION
+        // =========================
+        let currentPage = 1;
+        const itemsPerPage = 5;
+    
+        function renderPagination() {
+    
+            const allItems =
+                Array.from(document.querySelectorAll('.product-card'));
+    
+            // FILTER ITEMS
+            const filteredItems = allItems.filter(item => {
+    
+                const itemCategory =
+                    item.getAttribute('data-category');
+    
+                return currentCategory === 'all' ||
+                       itemCategory === currentCategory;
+            });
+    
+            // HIDE ALL FIRST
+            allItems.forEach(item => {
+                item.style.display = 'none';
+            });
+    
+            // PAGINATION LOGIC
+            const start = (currentPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+    
+            const paginatedItems =
+                filteredItems.slice(start, end);
+    
+            paginatedItems.forEach(item => {
+                item.style.display = 'flex';
+            });
+    
+            // TOTAL PAGES
+            const totalPages =
+                Math.ceil(filteredItems.length / itemsPerPage) || 1;
+    
+            // UPDATE PAGE TEXT
+            document.getElementById('page-indicator')
+                .innerText = `Page ${currentPage} of ${totalPages}`;
+        }
+    
+        function changePage(direction) {
+    
+            const allItems =
+                Array.from(document.querySelectorAll('.product-card'));
+    
+            const filteredItems = allItems.filter(item => {
+    
+                const itemCategory =
+                    item.getAttribute('data-category');
+    
+                return currentCategory === 'all' ||
+                       itemCategory === currentCategory;
+            });
+    
+            const totalPages =
+                Math.ceil(filteredItems.length / itemsPerPage) || 1;
+    
+            currentPage += direction;
+    
+            if (currentPage < 1) currentPage = 1;
+    
+            if (currentPage > totalPages)
+                currentPage = totalPages;
+    
+            renderPagination();
+        }
+    
+        // =========================
+        // INIT
+        // =========================
+        renderPagination();
+    
     </script>
 </body>
 </html>
