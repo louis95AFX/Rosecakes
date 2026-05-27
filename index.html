@@ -1134,6 +1134,26 @@
     color: white !important;
     border-color: var(--luxury-dark) !important;
 }
+/* Ensure the logo image scales smoothly within the flex container */
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between the logo image and the span text */
+    text-decoration: none;
+}
+
+.brand-logo .logo-img {
+    height: 45px;      /* Restricts the height to match your navbar balance */
+    width: auto;       /* Maintains the aspect ratio naturally */
+    object-fit: contain;
+}
+
+/* Make sure the subtext adjusts nicely alongside an image */
+.brand-logo span {
+    display: inline-block;
+    font-size: 0.85rem;
+    line-height: 1.2;
+}
     </style>
 </head>
 <body>
@@ -1142,7 +1162,11 @@
 
     <header id="navbar">
         <div class="nav-container">
-            <a href="#" class="brand-logo">Rosy's<span>Cakes and baking Supplies</span></a>
+            <a href="#" class="brand-logo">
+                <img src="logo.png" alt="Rosy's Cakes" class="logo-img">
+                <span>Cakes and baking Supplies</span>
+            </a>
+            
             <ul class="nav-links">
                 <li><a href="#home" onclick="toggleMenu()">Home</a></li>
                 <li><a href="#collections" onclick="toggleMenu()">Collections</a></li>
